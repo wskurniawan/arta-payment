@@ -13,5 +13,5 @@ export type bill_type = {
    penerbit: string,
    jumlah: number,
    kode: string,
-   is_padid: boolean
+   is_paid: boolean
 }

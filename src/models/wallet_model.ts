@@ -39,6 +39,24 @@ export async function get(email: string): Promise<wallet_type | null>{
    });
 }
 
+export async function get_by_token(token: string): Promise<wallet_type | null>{
+   try {
+      var result = await model.findOne({ token: token });
+   } catch (error) {
+      return Promise.reject(error);
+   }
+
+   if(!result){
+      return Promise.resolve(null);
+   }
+
+   return Promise.resolve({
+      email: result.email,
+      saldo: result.saldo,
+      token: result.token
+   });
+}
+
 export async function update_saldo(email: string, saldo: number): Promise<boolean>{
    var update = {
       saldo: saldo
@@ -56,5 +74,6 @@ export async function update_saldo(email: string, saldo: number): Promise<boolea
 export default {
    insert,
    get, 
-   update_saldo
+   update_saldo,
+   get_by_token
 }

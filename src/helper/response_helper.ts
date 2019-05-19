@@ -32,6 +32,14 @@ function invalid_auth(res: Response, error: any){
    })
 }
 
+function forbidden(res: Response, error: any){
+   res.status(403).send({
+      success: false,
+      error: 'forbidden_transaction',
+      message: error
+   });
+}
+
 function success(res: Response, data: any | null){
    res.send({
       success: true,
@@ -44,5 +52,6 @@ export default {
    internal_server_error,
    not_found_error,
    invalid_auth,
+   forbidden,
    success
 }

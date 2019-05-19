@@ -3,15 +3,13 @@ import account_model from '../models/account_model';
 import { account_type } from '../types/database_types';
 import joi from 'joi';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 
 import response_helper from '../helper/response_helper';
 import { auth_payload_type } from '../types/common_types';
 import wallet_model from '../models/wallet_model';
+import auth from '../helper/auth';
 
 const Router = express.Router();
-
-const auth_secret = <string> require('../../config.json').auth_secret;
 
 //base: /account
 Router.post('/register', async function(req, res, next){
@@ -88,7 +86,7 @@ Router.post('/login', async function(req, res, next){
       email: account.email
    }
 
-   const token = jwt.sign(auth_payload, auth_secret, { expiresIn: '2h' });
+   const token = auth.sign_token(auth_payload);
 
    response_helper.success(res, { token: token });
 });
