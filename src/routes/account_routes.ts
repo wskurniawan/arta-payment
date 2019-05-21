@@ -18,11 +18,11 @@ Router.post('/register', async function(req, res, next){
       password: joi.string().min(6).required()
    });
 
-   try {
-      await joi.validate(req.body, schema);
-   } catch (error) {
-      return response_helper.validation_error(res, error);
-   }
+   // try {
+   //    await joi.validate(req.body, schema);
+   // } catch (error) {
+   //    return response_helper.validation_error(res, error);
+   // }
 
    next();
 }, async function(req, res, next){
@@ -61,11 +61,11 @@ Router.post('/login', async function(req, res, next){
       password: joi.string().required()
    });
 
-   try {
-      await joi.validate(req.body, schema);
-   } catch (error) {
-      return response_helper.validation_error(res, error);
-   }
+   // try {
+   //    await joi.validate(req.body, schema);
+   // } catch (error) {
+   //    return response_helper.validation_error(res, error);
+   // }
 
    next();
 }, async function(req, res, next){
@@ -106,11 +106,11 @@ Router.get('/wallet', async function(req, res, next){
       session_token: joi.string().required()
    });
 
-   try {
-      await joi.validate(req.query, schema);
-   } catch (error) {
-      return response_helper.validation_error(res, error);
-   }
+   // try {
+   //    await joi.validate(req.query, schema);
+   // } catch (error) {
+   //    return response_helper.validation_error(res, error);
+   // }
 
    var token = <string> req.query.session_token;
 

@@ -18,11 +18,11 @@ Router.post('/create-bill', async function(req, res, next){
       jumlah: joi.number().required()
    });
 
-   try {
-      await joi.validate(req.body, schema);
-   } catch (error) {
-      return request_helper.validation_error(res, error);
-   }
+   // try {
+   //    await joi.validate(req.body, schema);
+   // } catch (error) {
+   //    return request_helper.validation_error(res, error);
+   // }
 
    next();
 }, async function(req, res, next){
@@ -75,11 +75,11 @@ Router.post('/pay', async function(req, res, next){
       session_token: joi.string().required()
    });
 
-   try {
-      await joi.validate(req.body, schema);
-   } catch (error) {
-      return response_helper.validation_error(res, error);
-   }
+   // try {
+   //    await joi.validate(req.body, schema);
+   // } catch (error) {
+   //    return response_helper.validation_error(res, error);
+   // }
 
    next();
 }, async function(req, res, next){
@@ -165,11 +165,11 @@ Router.post('/topup', async function(req, res, next){
       jumlah: joi.number().required()
    });
 
-   try {
-      await joi.validate(req.body, schema);
-   } catch (error) {
-      return response_helper.validation_error(res, error);
-   }
+   // try {
+   //    await joi.validate(req.body, schema);
+   // } catch (error) {
+   //    return response_helper.validation_error(res, error);
+   // }
 
    var token = <string> req.body.session_token;
 
