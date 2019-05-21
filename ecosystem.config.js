@@ -11,7 +11,7 @@ module.exports = {
          watch: true,
          env: {
             COMMON_VARIABLE: 'true',
-            PORT: 5003
+            PORT: 5010
          },
          env_production: {
             NODE_ENV: 'production'

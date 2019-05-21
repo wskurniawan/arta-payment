@@ -19,14 +19,14 @@ Router.post('/create-bill', async function(req, res, next){
    });
 
    try {
-      await joi.validate(req.query, schema);
+      await joi.validate(req.body, schema);
    } catch (error) {
       return request_helper.validation_error(res, error);
    }
 
    next();
 }, async function(req, res, next){
-   const request_data = <create_payment_type> req.query;
+   const request_data = <create_payment_type> req.body;
 
    try {
       var wallet_data = await wallet_model.get_by_token(request_data.token);
@@ -92,6 +92,8 @@ Router.post('/pay', async function(req, res, next){
    }
 
    req.user = auth_payload;
+
+   next();
 }, async function(req, res, next){
    const request_data = <pay_type> req.body;
 
@@ -103,6 +105,10 @@ Router.post('/pay', async function(req, res, next){
 
    if(!payment_detail){
       return response_helper.not_found_error(res, 'invalid payment_code');
+   }
+
+   if(payment_detail.is_paid){
+      return response_helper.forbidden(res, 'Tagihan sudah dibayar');
    }
 
    try {
@@ -122,12 +128,30 @@ Router.post('/pay', async function(req, res, next){
    }
 
    sender_wallet.saldo = sender_wallet.saldo - payment_detail.jumlah;
-   dest_wallet.saldo = dest_wallet.saldo + payment_detail.jumlah;
 
    //update balance
    try {
       await wallet_model.update_saldo(sender_wallet.email, sender_wallet.saldo);
+      dest_wallet = await wallet_model.get(payment_detail.penerbit);
+   } catch (error) {
+      return response_helper.internal_server_error(res, error);
+   }
+
+   if(dest_wallet === null){
+      return response_helper.not_found_error(res, 'invalid wallet id');
+   }
+
+   dest_wallet.saldo = dest_wallet.saldo + payment_detail.jumlah;
+   
+   try {
       await wallet_model.update_saldo(dest_wallet.email, dest_wallet.saldo);
+   } catch (error) {
+      return response_helper.internal_server_error(res, error);
+   }
+
+   //update payment status
+   try {
+      await bill_model.set_payment_status(payment_detail.kode);
    } catch (error) {
       return response_helper.internal_server_error(res, error);
    }

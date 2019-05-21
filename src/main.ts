@@ -1,6 +1,9 @@
 import express, { Request, Response, NextFunction } from 'express';
 import body_parser from 'body-parser';
 import { auth_payload_type } from './types/common_types';
+import mongoose from 'mongoose';
+
+const db_uri = <string> require('../config.json').db_uri;
 
 //extend express Request type definition
 declare global {
@@ -10,6 +13,12 @@ declare global {
       }
    }
 }
+
+mongoose.connect(db_uri, { useNewUrlParser: true }).then(() => {
+   console.log('db connected');
+}).catch(error => {
+   console.log(error);
+});
 
 const app = express();
 const port = process.env.PORT || 5022;

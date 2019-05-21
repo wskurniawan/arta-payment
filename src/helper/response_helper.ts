@@ -1,6 +1,10 @@
 import { Response } from "express";
 
 function validation_error(res: Response, error: any){
+   if(error instanceof Error){
+      error = error.message
+   }
+
    res.status(400).send({
       success: false,
       error: 'validation_error',
@@ -9,6 +13,10 @@ function validation_error(res: Response, error: any){
 }
 
 function internal_server_error(res: Response, error: any){
+   if(error instanceof Error){
+      error = error.message
+   }
+
    res.status(500).send({
       success: false,
       error: 'internal_server_error',
@@ -17,6 +25,10 @@ function internal_server_error(res: Response, error: any){
 }
 
 function not_found_error(res: Response, error: any){
+   if(error instanceof Error){
+      error = error.message
+   }
+
    res.status(404).send({
       success: false,
       error: 'not_found_error',
@@ -25,6 +37,10 @@ function not_found_error(res: Response, error: any){
 }
 
 function invalid_auth(res: Response, error: any){
+   if(error instanceof Error){
+      error = error.message
+   }
+
    res.status(401).send({
       success: false,
       error: 'invalid_auth',
@@ -33,6 +49,10 @@ function invalid_auth(res: Response, error: any){
 }
 
 function forbidden(res: Response, error: any){
+   if(error instanceof Error){
+      error = error.message
+   }
+
    res.status(403).send({
       success: false,
       error: 'forbidden_transaction',
