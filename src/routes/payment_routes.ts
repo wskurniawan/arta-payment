@@ -62,9 +62,9 @@ Router.get('/get-status/:payment_code', async function(req, res, next){
       return response_helper.internal_server_error(res, error);
    }
 
-   if(!bill_data){
-      return response_helper.not_found_error(res, 'invalid payment code');
-   }
+   // if(!bill_data){
+   //    return response_helper.not_found_error(res, 'invalid payment code');
+   // }
 
    response_helper.success(res, bill_data);
 });
