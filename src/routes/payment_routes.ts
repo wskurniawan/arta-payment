@@ -76,7 +76,7 @@ Router.post('/pay', async function(req, res, next){
    });
 
    try {
-      await joi.validate(req.query, schema);
+      await joi.validate(req.body, schema);
    } catch (error) {
       return response_helper.validation_error(res, error);
    }

@@ -14,7 +14,7 @@ const Router = express.Router();
 //base: /account
 Router.post('/register', async function(req, res, next){
    const schema = joi.object().keys({
-      email: joi.string().required(),
+      email: joi.string().email().required(),
       password: joi.string().required()
    });
 
@@ -57,7 +57,7 @@ Router.post('/register', async function(req, res, next){
 
 Router.post('/login', async function(req, res, next){
    const schema = joi.object().keys({
-      email: joi.string().required(),
+      email: joi.string().email().required(),
       password: joi.string().required()
    });
 
