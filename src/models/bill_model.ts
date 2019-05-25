@@ -5,6 +5,7 @@ type document_type = mongoose.Document & bill_type;
 
 const schema = new mongoose.Schema({
    penerbit: String,
+   email: String,
    jumlah: Number,
    kode: String,
    is_paid: Boolean
@@ -37,7 +38,8 @@ export async function get(kode: string): Promise<bill_type | null>{
       penerbit: result.penerbit,
       jumlah: result.jumlah,
       kode: result.kode,
-      is_paid: result.is_paid
+      is_paid: result.is_paid,
+      email: result.email
    }
 
    return Promise.resolve(result_data);

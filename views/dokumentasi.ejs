@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Dokumentasi Arta Payment API [BETA]</title>
+
+   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <!-- UIkit CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/css/uikit.min.css" />
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+   <!-- custom style -->
+   <link rel="stylesheet" href="/assets/public/css/custom.css">
+</head>
+<body>
+   <div class="uk-width-1-1 uk-height-viewport uk-flex uk-flex-center uk-flex-middle">
+      <div class="uk-width-2-3@m uk-width-1-1@s" style="padding: 12px">
+         <!-- content -->
+         <div class="uk-card uk-card-default" style="background-color: #F0F2F2">
+            <div class="uk-card-body">
+               <div class="uk-flex uk-flex-center">
+                  <img src="/assets/public/img/logo_arta.png" alt="logo">
+               </div>
+   
+               <h5 class="uk-text-center"><b>DOKUMENTASI</b></h5>
+            </div>
+         </div>
+         <!-- end -->
+         
+         <!-- create bill -->
+         <div class="uk-card uk-card-default" style="margin-top: 24px; margin-bottom: 24px;">
+            <div class="uk-card-body">
+               <h3 class="ws-title">MENERBITKAN TAGIHAN PEMBAYARAN</h3>
+               <span>API ini berguna untuk menerbitkan tagihan dengan jumlah tertentu yang nantinya harus dibayar oleh pengguna.</span>
+   
+               <h3 class="ws-title">Endpoint</h3>
+               <input class="uk-input" value="https://arta.ruangkarya.id/payment/create-bill" disabled>
+   
+               <h3 class="ws-title">Method</h3>
+               <input class="uk-input" value="POST" disabled>
+   
+               <h3 class="ws-title">Content-Type</h3>
+               <input class="uk-input" value="application/json" disabled>
+   
+               <h3 class="ws-title">Request Body</h3>
+               <script context="module" src="https://gist.github.com/wskurniawan/6275c7e7f89abef70685ab5e258978e6.js"></script>
+               <span><b>wallet_token</b> diperoleh dari halaman profile. <b>Signup</b> ke <a href="https://arta.ruangkarya.id" target="__blank">https://arta.ruangkarya.id</a>. <b>Kemudian</b> buka halaman my profile, akan ditampilkan token wallet pada halaman tersebut.</span>
+               <img src="/assets/public/img/token.png">
+
+               <h3 class="ws-title">Success Reponse</h3>
+               <script src="https://gist.github.com/wskurniawan/a3071d613a294e887dce83c54fe6b233.js"></script>
+               <span>Data akan berisi kode yang merupakan kode pembayaran. Simpanlah kode tersebut kedalam database maupun metode lainnya, kemudian kode ini akan digunakan untuk menyusun link pembayaran,</span>
+            
+               <h3 class="ws-title">Error Response</h3>
+               <script src="https://gist.github.com/wskurniawan/2bf9cc0e398c3c493b523ef832985ef4.js"></script>
+            </div>
+         </div>
+         <!-- end -->
+
+         <!-- generate link -->
+         <div class="uk-card uk-card-default" style="margin-bottom: 24px;">
+            <div class="uk-card-body">
+               <h3 class="ws-title">MENYUSUN LINK PEMBARAYAN</h3>
+               <span>Cara kerja pemrosesan pembayaran <b>Arta Payment</b> mirip dengan paypal, mitra hanya perlu menyediakan link untuk menuju halaman pembayaran yang sudah disediakan <b>Arta Payment</b>, kemudian pemrosesan pembayaran akan dilakukan oleh arta payment</span>
+
+               <h3 class="ws-title">Format Link</h3>
+               <input class="uk-input" value="https://arta.ruangkarya.id/pay?paymentCode={payment_code}&successRedirect={alamat_redirect}" disabled>
+               <span>atau</span>
+               <input class="uk-input" value="https://arta.ruangkarya.id/pay?paymentCode={payment_code}" disabled>
+               
+               <span>- <b>payment_code</b> (wajib) diisi dengan kode pembayaran yang sudah didapat sebelumnya dari proses penerbitan pembayara.</span>
+               <br>
+               <span>- <b>alamat_redirect</b> (opsional) diisi dengan alamat redirect mitra jika pembayaran sudah selesai</span>
+
+               <h3 class="ws-title">Contoh Implementasi</h3>
+               <span>Pada web dapat menggunakan link, seperti berikut:</span>
+               <script src="https://gist.github.com/wskurniawan/87afd4921772f779ecde107f66829ec7.js"></script>
+
+               <div style="margin-top: 24px; margin-bottom: 24px">
+                  <a class="uk-align-center uk-button uk-button-default ws-blue-btn" href="/pay?paymentCode=<%= kode_pembayaran %>&successRedirect=https://arta.ruangkarya.id/dokumentasi">Bayar Sekarang</a>
+               </div>
+
+               <span>Untuk android dapat menggunakan webview dengan format link kedua.</span>
+            </div>
+         </div>
+         <!-- end -->
+
+         <!-- get payment status -->
+         <div class="uk-card uk-card-default" style="margin-bottom: 24px;">
+            <div class="uk-card-body">
+               <h3 class="ws-title">Mengecek Status Pembayaran</h3>
+               <span>API ini digunakan untuk mengecek status pembayaran, apakah sudah dibayar oleh pengguna atau belum.</span>
+               
+               <h3 class="ws-title">Endpoint</h3>
+               <input class="uk-input" value="https://arta.ruangkarya.id/payment/get-status/{paymentCode}" disabled>
+   
+               <h3 class="ws-title">Method</h3>
+               <input class="uk-input" value="GET" disabled>
+
+               <h3 class="ws-title">Contoh</h3>
+               <input class="uk-input" value="https://arta.ruangkarya.id/payment/get-status/PY1558827474562" disabled>
+
+               <h3 class="ws-title">Success Response</h3>
+               <script src="https://gist.github.com/wskurniawan/5a38286cf66d31b7fbd8e60719765e01.js"></script>
+
+               <h3 class="ws-title">Error Response</h3>
+               <script src="https://gist.github.com/wskurniawan/2bf9cc0e398c3c493b523ef832985ef4.js"></script>
+            </div>
+         </div>
+         <!-- end -->
+      </div>
+   </div>
+
+   <!-- UIkit JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.5/js/uikit-icons.min.js"></script>
+</body>
+</html>

@@ -1,7 +1,12 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction, response } from 'express';
 import body_parser from 'body-parser';
 import { auth_payload_type } from './types/common_types';
 import mongoose from 'mongoose';
+import axios from 'axios';
+import response_helper from './helper/response_helper';
+import joi from 'joi';
+import { user_pay_type } from './types/request_types';
+import auth from './helper/auth';
 
 const db_uri = <string> require('../config.json').db_uri;
 
@@ -28,7 +33,39 @@ app.use(body_parser.json());
 app.use('/assets/public', express.static(`${__dirname}/../assets/public`));
 
 app.get('/', function(req, res, next){
-   res.send('oke');
+   res.redirect('/app');
+});
+
+app.get('/dokumentasi', async function(req, res, next){
+   try {
+      var result = await axios.post(`https://arta.ruangkarya.id/payment/create-bill`, { token: 'tk1558783861903', jumlah: 10000 });
+   } catch (error) {
+      //console.log(error.response);
+      return response_helper.internal_server_error(res, <string> error.message);
+   }
+
+   res.render('dokumentasi', { kode_pembayaran: result.data.data.kode});
+});
+
+app.get('/pay', async function(req, res, next){
+   const schema = joi.object().keys({
+      paymentCode: joi.string().required(),
+      successRedirect: joi.string().optional()
+   });
+
+   try {
+      await joi.validate(req.query, schema);
+   } catch (error) {
+      return response_helper.validation_error(res, <string> error.message);
+   }
+
+   next();
+}, function(req, res, next){
+   const request_data = <user_pay_type> req.query;
+
+   var session_id = auth.generate_session_id({ action: 'pay', payment_code: request_data.paymentCode, redirect_url: request_data.successRedirect });
+
+   res.redirect(`/app/login?sessionId=${session_id}`);
 });
 
 app.use('/app', require('./routes/view_routes').default);

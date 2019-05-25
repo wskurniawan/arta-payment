@@ -4,6 +4,7 @@ import { account_type } from '../types/database_types';
 type document_type = mongoose.Document & account_type;
 
 const schema = new mongoose.Schema({
+   name: String,
    email: String,
    password: String
 });
@@ -31,7 +32,7 @@ export async function get(email: string): Promise<account_type | null>{
       return Promise.resolve(null);
    }
 
-   return Promise.resolve({ email: result.email, password: result.password });
+   return Promise.resolve({ email: result.email, password: result.password, name: result.name });
 }
 
 export default {

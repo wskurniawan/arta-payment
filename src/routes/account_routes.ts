@@ -14,6 +14,7 @@ const Router = express.Router();
 //base: /account
 Router.post('/register', async function(req, res, next){
    const schema = joi.object().keys({
+      name: joi.string().required(),
       email: joi.string().email().required(),
       password: joi.string().min(6).required()
    });
@@ -27,6 +28,7 @@ Router.post('/register', async function(req, res, next){
    next();
 }, async function(req, res, next){
    var data: account_type = {
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password
    }
@@ -93,12 +95,39 @@ Router.post('/login', async function(req, res, next){
    }
 
    const auth_payload: auth_payload_type = {
-      email: account.email
+      email: account.email,
+      name: account.name
    }
 
    const token = auth.sign_token(auth_payload);
 
    response_helper.success(res, { token: token });
+});
+
+Router.get('/data-profile', async function(req, res, next){
+   const schema = joi.object().keys({
+      session_token: joi.string().required()
+   });
+
+   try {
+      await joi.validate(req.query, schema);
+   } catch (error) {
+      return response_helper.validation_error(res, error);
+   }
+
+   var token = <string> req.query.session_token;
+
+   try{
+      var decode = await auth.verify(token);
+   }catch(error){
+      return response_helper.invalid_auth(res, error);
+   }
+
+   req.user = decode;
+
+   next();
+}, function(req, res, next){
+   response_helper.success(res, req.user);
 });
 
 Router.get('/wallet', async function(req, res, next){

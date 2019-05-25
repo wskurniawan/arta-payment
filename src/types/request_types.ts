@@ -12,3 +12,8 @@ export type topup_type = {
    session_token: string,
    jumlah: number
 }
+
+export type user_pay_type = {
+   paymentCode: string,
+   successRedirect?: string
+}

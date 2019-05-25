@@ -6,8 +6,8 @@ import { create_payment_type, pay_type, topup_type } from '../types/request_type
 import response_helper from '../helper/response_helper';
 import { bill_type } from '../types/database_types';
 import bill_model from '../models/bill_model';
-import { Schema } from 'mongoose';
 import auth from '../helper/auth';
+import account_model from '../models/account_model';
 
 const Router = express.Router();
 
@@ -38,8 +38,19 @@ Router.post('/create-bill', async function(req, res, next){
       return response_helper.validation_error(res, 'Token tidak valid');
    }
 
+   try {
+      var account_data = await account_model.get(wallet_data.email);
+   } catch (error) {
+      return response_helper.internal_server_error(res, <string> error.message);
+   }
+
+   if(!account_data){
+      return response_helper.not_found_error(res, 'Wallet tidak valid');
+   }
+
    const bill_data: bill_type = {
-      penerbit: wallet_data.email,
+      email: account_data.email,
+      penerbit: account_data.name,
       jumlah: request_data.jumlah,
       kode: `PY${Date.now()}`,
       is_paid: false
@@ -51,7 +62,9 @@ Router.post('/create-bill', async function(req, res, next){
       return response_helper.internal_server_error(res, error);
    }
 
-   response_helper.success(res, bill_data);
+   response_helper.success(res, {
+      kode: bill_data.kode
+   });
 });
 
 Router.get('/get-status/:payment_code', async function(req, res, next){
@@ -62,11 +75,16 @@ Router.get('/get-status/:payment_code', async function(req, res, next){
       return response_helper.internal_server_error(res, error);
    }
 
-   // if(!bill_data){
-   //    return response_helper.not_found_error(res, 'invalid payment code');
-   // }
+   if(!bill_data){
+      return response_helper.not_found_error(res, 'invalid payment code');
+   }
 
-   response_helper.success(res, bill_data);
+   response_helper.success(res, {
+      penerbit: bill_data.penerbit,
+      jumlah: bill_data.jumlah,
+      is_paid: bill_data.is_paid,
+      kode: bill_data.kode
+   });
 });
 
 Router.post('/pay', async function(req, res, next){
@@ -113,12 +131,12 @@ Router.post('/pay', async function(req, res, next){
 
    try {
       var sender_wallet = await wallet_model.get(req.user.email);
-      var dest_wallet = await wallet_model.get(payment_detail.penerbit);
+      var dest_wallet = await wallet_model.get(payment_detail.email);
    } catch (error) {
       return response_helper.internal_server_error(res, error);
    }
 
-   if(!sender_wallet || !dest_wallet){
+   if(sender_wallet === null || dest_wallet === null){
       return response_helper.not_found_error(res, 'invalid wallet id');
    }
 
@@ -132,7 +150,7 @@ Router.post('/pay', async function(req, res, next){
    //update balance
    try {
       await wallet_model.update_saldo(sender_wallet.email, sender_wallet.saldo);
-      dest_wallet = await wallet_model.get(payment_detail.penerbit);
+      dest_wallet = await wallet_model.get(payment_detail.email);
    } catch (error) {
       return response_helper.internal_server_error(res, error);
    }
