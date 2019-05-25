@@ -84,7 +84,7 @@
 				const queryParam = new URLSearchParams();
 				queryParam.set('session', result.data.token)
 				
-				if(session_id){
+				if(session_id != null){
 					queryParam.set('sessionId', session_id);
 				}
 

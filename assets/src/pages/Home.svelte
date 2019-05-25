@@ -5,7 +5,7 @@
 
       <div class="uk-card uk-card-default">
          <div class="uk-card-body">
-            <div class="uk-flex">
+            <div uk-grid>
                <!-- profile -->
                <div class="uk-width-1-2@m uk-width-1-1@s">
                   <img class="uk-align-center" src="/assets/public/img/account-icon.png" width="86" alt="account">
