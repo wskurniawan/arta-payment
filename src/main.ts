@@ -23,12 +23,15 @@ mongoose.connect(db_uri, { useNewUrlParser: true }).then(() => {
 const app = express();
 const port = process.env.PORT || 5022;
 
+app.set('view engine', 'ejs');
 app.use(body_parser.json());
+app.use('/assets/public', express.static(`${__dirname}/../assets/public`));
 
 app.get('/', function(req, res, next){
    res.send('oke');
 });
 
+app.use('/app', require('./routes/view_routes').default);
 app.use('/account', require('./routes/account_routes').default);
 app.use('/payment', require('./routes/payment_routes').default);
 

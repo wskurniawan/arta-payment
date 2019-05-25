@@ -15,7 +15,7 @@ const Router = express.Router();
 Router.post('/register', async function(req, res, next){
    const schema = joi.object().keys({
       email: joi.string().email().required(),
-      password: joi.string().required()
+      password: joi.string().min(6).required()
    });
 
    try {

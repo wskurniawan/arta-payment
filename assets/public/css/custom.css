@@ -1,0 +1,24 @@
+body, h1, h2, h3, h4, h5, span, b, i{
+   font-family: 'Roboto', sans-serif;
+} 
+
+.ws-blue-btn{
+   background-color: #28AAD3;
+   color: white;
+}
+
+.ws-title{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.ws-title-small{
+   font-size: 13px;
+   color: black;
+   font-weight: bold;
+}
+
+*+.uk-h1, *+.uk-h2, *+.uk-h3, *+.uk-h4, *+.uk-h5, *+.uk-h6, *+.uk-heading-2xlarge, *+.uk-heading-large, *+.uk-heading-medium, *+.uk-heading-small, *+.uk-heading-xlarge, *+h1, *+h2, *+h3, *+h4, *+h5, *+h6 {
+   margin-top: 20px;
+   margin-bottom: 5px;
+}
