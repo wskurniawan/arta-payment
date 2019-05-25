@@ -22,3 +22,45 @@ body, h1, h2, h3, h4, h5, span, b, i{
    margin-top: 20px;
    margin-bottom: 5px;
 }
+
+/* The Modal (background) */
+.ws-modal-container {
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Sit on top */
+   left: 0;
+   top: 0;
+   width: 100%; /* Full width */
+   height: 100%; /* Full height */
+   overflow: auto; /* Enable scroll if needed */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+ 
+ /* Modal Content/Box */
+.ws-modal-content {
+   margin: 15% auto; /* 15% from the top and centered */
+   padding: 12px;
+ }
+ 
+ /* The Close Button */
+.ws-modal-close {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+ 
+ .ws-modal-close:hover,
+ .ws-modalclose:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ .uk-grid{
+    margin-left: 0px;
+ }
+
+ *+.uk-grid-margin, .uk-grid+.uk-grid, .uk-grid>.uk-grid-margin {
+   margin-top: 15px;
+}
