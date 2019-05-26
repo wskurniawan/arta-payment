@@ -7,6 +7,7 @@ import response_helper from './helper/response_helper';
 import joi from 'joi';
 import { user_pay_type } from './types/request_types';
 import auth from './helper/auth';
+import cors from 'cors';
 
 const db_uri = <string> require('../config.json').db_uri;
 
@@ -28,8 +29,10 @@ mongoose.connect(db_uri, { useNewUrlParser: true }).then(() => {
 const app = express();
 const port = process.env.PORT || 5022;
 
+app.use(cors());
 app.set('view engine', 'ejs');
 app.use(body_parser.json());
+app.use(body_parser.urlencoded({ extended: false }));
 app.use('/assets/public', express.static(`${__dirname}/../assets/public`));
 
 app.get('/', function(req, res, next){
@@ -71,6 +74,7 @@ app.get('/pay', async function(req, res, next){
 app.use('/app', require('./routes/view_routes').default);
 app.use('/account', require('./routes/account_routes').default);
 app.use('/payment', require('./routes/payment_routes').default);
+app.use('/service/pjt', require('./routes/cek_ongkir_routes').default);
 
 app.use(function(err: Error, req: Request, res: Response, next: NextFunction){
    console.log(err);

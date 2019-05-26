@@ -17,3 +17,9 @@ export type user_pay_type = {
    paymentCode: string,
    successRedirect?: string
 }
+
+export type get_ongkir_post_type = {
+   id_kota_asal: string,
+   id_kota_tujuan: string,
+   berat: string
+}
