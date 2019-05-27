@@ -310,6 +310,25 @@
       <CekOngkir bind:show={modal.cek_ongkir}></CekOngkir>
       {/if}
       <!-- end -->
+
+      <!-- iklanin ads -->
+      <div style="margin-bottom: 24px; margin-top: 24px;" uk-grid>
+         {#if iklan.iklan_1.length > 0}
+         <div class="uk-width-1-1@s uk-width-1-2@m">
+            <img src={iklan.iklan_1} alt="iklan">
+         </div>
+         {/if}
+         {#if iklan.iklan_2.length > 0}
+         <div class="uk-width-1-1@s uk-width-1-2@m">
+            <img src={iklan.iklan_2} alt="iklan">
+         </div>
+         {/if}
+         <div class="uk-width-1-1 uk-flex uk-flex-right">
+            <span class="ws-title">Ads by</span>
+            <span style="font-size: 12px">Iklanin</span>
+         </div>
+      </div>
+      <!-- end -->
    </div>
 </div>
 
@@ -378,6 +397,14 @@
       timer: 5
    }
 
+   const iklan = {
+      iklan_1: '',
+      iklan_2: '',
+      iklan_topup: '',
+      iklan_payment: '',
+      iklan_create_bill: '' 
+   }
+
    $: {
       if(account_data.balance != 0){
          account_data.str_balance = Number.parseInt(account_data.balance).toLocaleString();
@@ -427,6 +454,19 @@
 
       get_wallet_data();
       get_action();
+
+      //get iklan
+      get_ads().then(result => {
+         iklan.iklan_1 = result.data.url
+      }).catch(error => {
+         console.log(error);
+      });
+
+      get_ads().then(result => {
+         iklan.iklan_2 = result.data.url
+      }).catch(error => {
+         console.log(error);
+      });
    });
 
    function do_topup(amount){
@@ -612,5 +652,11 @@
       modal.topup = true;
 
       topup_status.reload = true;
+   }
+
+   function get_ads(){
+      return fetch('/service/ads/img-ads').then(result => {
+         return result.json();
+      })
    }
 </script>

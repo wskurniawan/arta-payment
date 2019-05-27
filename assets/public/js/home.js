@@ -2221,7 +2221,7 @@ var home = (function () {
 	const file$3 = "src/pages/Home.svelte";
 
 	// (67:9) {#if !loading.topup && !topup_status.success && !topup_status.failed}
-	function create_if_block_16(ctx) {
+	function create_if_block_18(ctx) {
 		var div6, div0, uk_button0, t1, div1, uk_button1, t3, div2, uk_button2, t5, div3, uk_button3, t7, div4, uk_button4, t9, div5, uk_button5, dispose;
 
 		return {
@@ -2325,7 +2325,7 @@ var home = (function () {
 	}
 
 	// (102:9) {#if loading.topup}
-	function create_if_block_15(ctx) {
+	function create_if_block_17(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -2359,7 +2359,7 @@ var home = (function () {
 	}
 
 	// (107:9) {#if topup_status.success}
-	function create_if_block_14(ctx) {
+	function create_if_block_16(ctx) {
 		var div1, div0, h3;
 
 		return {
@@ -2391,7 +2391,7 @@ var home = (function () {
 	}
 
 	// (117:9) {#if topup_status.failed}
-	function create_if_block_13(ctx) {
+	function create_if_block_15(ctx) {
 		var div1, div0, h3;
 
 		return {
@@ -2426,13 +2426,13 @@ var home = (function () {
 	function create_default_slot_3(ctx) {
 		var h4, b0, t1, div, span, b1, t3, h2, b2, t4, t5_value = ctx.account_data.str_balance, t5, t6, t7, t8, t9, t10, if_block3_anchor, current;
 
-		var if_block0 = (!ctx.loading.topup && !ctx.topup_status.success && !ctx.topup_status.failed) && create_if_block_16(ctx);
+		var if_block0 = (!ctx.loading.topup && !ctx.topup_status.success && !ctx.topup_status.failed) && create_if_block_18(ctx);
 
-		var if_block1 = (ctx.loading.topup) && create_if_block_15(ctx);
+		var if_block1 = (ctx.loading.topup) && create_if_block_17(ctx);
 
-		var if_block2 = (ctx.topup_status.success) && create_if_block_14(ctx);
+		var if_block2 = (ctx.topup_status.success) && create_if_block_16(ctx);
 
-		var if_block3 = (ctx.topup_status.failed) && create_if_block_13(ctx);
+		var if_block3 = (ctx.topup_status.failed) && create_if_block_15(ctx);
 
 		return {
 			c: function create() {
@@ -2503,7 +2503,7 @@ var home = (function () {
 
 				if (!ctx.loading.topup && !ctx.topup_status.success && !ctx.topup_status.failed) {
 					if (!if_block0) {
-						if_block0 = create_if_block_16(ctx);
+						if_block0 = create_if_block_18(ctx);
 						if_block0.c();
 						if_block0.m(t8.parentNode, t8);
 					}
@@ -2514,7 +2514,7 @@ var home = (function () {
 
 				if (ctx.loading.topup) {
 					if (!if_block1) {
-						if_block1 = create_if_block_15(ctx);
+						if_block1 = create_if_block_17(ctx);
 						if_block1.c();
 						if_block1.i(1);
 						if_block1.m(t9.parentNode, t9);
@@ -2534,7 +2534,7 @@ var home = (function () {
 
 				if (ctx.topup_status.success) {
 					if (!if_block2) {
-						if_block2 = create_if_block_14(ctx);
+						if_block2 = create_if_block_16(ctx);
 						if_block2.c();
 						if_block2.m(t10.parentNode, t10);
 					}
@@ -2545,7 +2545,7 @@ var home = (function () {
 
 				if (ctx.topup_status.failed) {
 					if (!if_block3) {
-						if_block3 = create_if_block_13(ctx);
+						if_block3 = create_if_block_15(ctx);
 						if_block3.c();
 						if_block3.m(if_block3_anchor.parentNode, if_block3_anchor);
 					}
@@ -2602,7 +2602,7 @@ var home = (function () {
 	}
 
 	// (132:9) {#if payment.display_error}
-	function create_if_block_12(ctx) {
+	function create_if_block_14(ctx) {
 		var div, p, t0, t1_value = ctx.payment.error_message, t1, t2;
 
 		return {
@@ -2641,7 +2641,7 @@ var home = (function () {
 	}
 
 	// (138:9) {#if payment.display_success}
-	function create_if_block_11(ctx) {
+	function create_if_block_13(ctx) {
 		var div, p;
 
 		return {
@@ -2669,7 +2669,7 @@ var home = (function () {
 	}
 
 	// (155:9) {#if !payment.display_data}
-	function create_if_block_10$1(ctx) {
+	function create_if_block_12(ctx) {
 		var div, h5, t1, input, t2, button, dispose;
 
 		return {
@@ -2725,14 +2725,14 @@ var home = (function () {
 	}
 
 	// (164:9) {#if payment.display_data}
-	function create_if_block_5$1(ctx) {
+	function create_if_block_7$1(ctx) {
 		var div2, div1, span0, t1, h3, t2_value = ctx.payment.data.publisher, t2, t3, span1, t5, h2, t6, t7_value = ctx.Number.parseInt(ctx.payment.data.amount).toLocaleString(), t7, t8, t9, div0, t10, t11, current;
 
-		var if_block0 = (!ctx.payment.loading_pay && !ctx.payment.complete) && create_if_block_8$1(ctx);
+		var if_block0 = (!ctx.payment.loading_pay && !ctx.payment.complete) && create_if_block_10$1(ctx);
 
-		var if_block1 = (ctx.payment.loading_pay) && create_if_block_7$1(ctx);
+		var if_block1 = (ctx.payment.loading_pay) && create_if_block_9$1(ctx);
 
-		var if_block2 = (ctx.payment.complete && ctx.payment.is_redirect) && create_if_block_6$1(ctx);
+		var if_block2 = (ctx.payment.complete && ctx.payment.is_redirect) && create_if_block_8$1(ctx);
 
 		return {
 			c: function create() {
@@ -2807,7 +2807,7 @@ var home = (function () {
 					if (if_block0) {
 						if_block0.p(changed, ctx);
 					} else {
-						if_block0 = create_if_block_8$1(ctx);
+						if_block0 = create_if_block_10$1(ctx);
 						if_block0.c();
 						if_block0.m(div0, t10);
 					}
@@ -2818,7 +2818,7 @@ var home = (function () {
 
 				if (ctx.payment.loading_pay) {
 					if (!if_block1) {
-						if_block1 = create_if_block_7$1(ctx);
+						if_block1 = create_if_block_9$1(ctx);
 						if_block1.c();
 						if_block1.i(1);
 						if_block1.m(div0, t11);
@@ -2840,7 +2840,7 @@ var home = (function () {
 					if (if_block2) {
 						if_block2.p(changed, ctx);
 					} else {
-						if_block2 = create_if_block_6$1(ctx);
+						if_block2 = create_if_block_8$1(ctx);
 						if_block2.c();
 						if_block2.m(div0, null);
 					}
@@ -2874,11 +2874,11 @@ var home = (function () {
 	}
 
 	// (173:18) {#if !payment.loading_pay && !payment.complete}
-	function create_if_block_8$1(ctx) {
+	function create_if_block_10$1(ctx) {
 		var div;
 
 		function select_block_type(ctx) {
-			if (ctx.payment.data.amount < ctx.account_data.balance) return create_if_block_9$1;
+			if (ctx.payment.data.amount < ctx.account_data.balance) return create_if_block_11;
 			return create_else_block_1;
 		}
 
@@ -2959,7 +2959,7 @@ var home = (function () {
 	}
 
 	// (175:24) {#if payment.data.amount < account_data.balance}
-	function create_if_block_9$1(ctx) {
+	function create_if_block_11(ctx) {
 		var button, dispose;
 
 		return {
@@ -2988,7 +2988,7 @@ var home = (function () {
 	}
 
 	// (187:18) {#if payment.loading_pay}
-	function create_if_block_7$1(ctx) {
+	function create_if_block_9$1(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -3022,7 +3022,7 @@ var home = (function () {
 	}
 
 	// (190:18) {#if payment.complete && payment.is_redirect}
-	function create_if_block_6$1(ctx) {
+	function create_if_block_8$1(ctx) {
 		var span, t0, t1_value = ctx.payment.timer, t1, t2;
 
 		return {
@@ -3060,13 +3060,13 @@ var home = (function () {
 	function create_default_slot_2(ctx) {
 		var t0, t1, h4, b0, t3, div, span, b1, t5, h2, b2, t6, t7_value = ctx.account_data.str_balance, t7, t8, t9, t10, if_block3_anchor, current;
 
-		var if_block0 = (ctx.payment.display_error) && create_if_block_12(ctx);
+		var if_block0 = (ctx.payment.display_error) && create_if_block_14(ctx);
 
-		var if_block1 = (ctx.payment.display_success) && create_if_block_11(ctx);
+		var if_block1 = (ctx.payment.display_success) && create_if_block_13(ctx);
 
-		var if_block2 = (!ctx.payment.display_data) && create_if_block_10$1(ctx);
+		var if_block2 = (!ctx.payment.display_data) && create_if_block_12(ctx);
 
-		var if_block3 = (ctx.payment.display_data) && create_if_block_5$1(ctx);
+		var if_block3 = (ctx.payment.display_data) && create_if_block_7$1(ctx);
 
 		return {
 			c: function create() {
@@ -3135,7 +3135,7 @@ var home = (function () {
 					if (if_block0) {
 						if_block0.p(changed, ctx);
 					} else {
-						if_block0 = create_if_block_12(ctx);
+						if_block0 = create_if_block_14(ctx);
 						if_block0.c();
 						if_block0.m(t0.parentNode, t0);
 					}
@@ -3146,7 +3146,7 @@ var home = (function () {
 
 				if (ctx.payment.display_success) {
 					if (!if_block1) {
-						if_block1 = create_if_block_11(ctx);
+						if_block1 = create_if_block_13(ctx);
 						if_block1.c();
 						if_block1.m(t1.parentNode, t1);
 					}
@@ -3163,7 +3163,7 @@ var home = (function () {
 					if (if_block2) {
 						if_block2.p(changed, ctx);
 					} else {
-						if_block2 = create_if_block_10$1(ctx);
+						if_block2 = create_if_block_12(ctx);
 						if_block2.c();
 						if_block2.m(t10.parentNode, t10);
 					}
@@ -3177,7 +3177,7 @@ var home = (function () {
 						if_block3.p(changed, ctx);
 						if_block3.i(1);
 					} else {
-						if_block3 = create_if_block_5$1(ctx);
+						if_block3 = create_if_block_7$1(ctx);
 						if_block3.c();
 						if_block3.i(1);
 						if_block3.m(if_block3_anchor.parentNode, if_block3_anchor);
@@ -3238,11 +3238,11 @@ var home = (function () {
 	}
 
 	// (211:9) {#if !loading.create_bill && !create_bill_status.success && !create_bill_status.fail}
-	function create_if_block_3$1(ctx) {
+	function create_if_block_5$1(ctx) {
 		var div, h5, t1, input, t2, current_block_type_index, if_block, current, dispose;
 
 		var if_block_creators = [
-			create_if_block_4$1,
+			create_if_block_6$1,
 			create_else_block$1
 		];
 
@@ -3373,7 +3373,7 @@ var home = (function () {
 	}
 
 	// (216:12) {#if !loading.create_bill}
-	function create_if_block_4$1(ctx) {
+	function create_if_block_6$1(ctx) {
 		var button, dispose;
 
 		return {
@@ -3405,7 +3405,7 @@ var home = (function () {
 	}
 
 	// (224:9) {#if create_bill_status.success}
-	function create_if_block_2$1(ctx) {
+	function create_if_block_4$1(ctx) {
 		var div1, div0, h5, span, t1, t2, input, dispose;
 
 		return {
@@ -3460,7 +3460,7 @@ var home = (function () {
 	}
 
 	// (233:9) {#if create_bill_status.failed}
-	function create_if_block_1$1(ctx) {
+	function create_if_block_3$1(ctx) {
 		var div1, div0, h3;
 
 		return {
@@ -3495,11 +3495,11 @@ var home = (function () {
 	function create_default_slot_1(ctx) {
 		var h4, b0, t1, div, span, b1, t3, h2, b2, t4, t5_value = ctx.account_data.str_balance, t5, t6, t7, t8, t9, if_block2_anchor, current;
 
-		var if_block0 = (!ctx.loading.create_bill && !ctx.create_bill_status.success && !ctx.create_bill_status.fail) && create_if_block_3$1(ctx);
+		var if_block0 = (!ctx.loading.create_bill && !ctx.create_bill_status.success && !ctx.create_bill_status.fail) && create_if_block_5$1(ctx);
 
-		var if_block1 = (ctx.create_bill_status.success) && create_if_block_2$1(ctx);
+		var if_block1 = (ctx.create_bill_status.success) && create_if_block_4$1(ctx);
 
-		var if_block2 = (ctx.create_bill_status.failed) && create_if_block_1$1(ctx);
+		var if_block2 = (ctx.create_bill_status.failed) && create_if_block_3$1(ctx);
 
 		return {
 			c: function create() {
@@ -3569,7 +3569,7 @@ var home = (function () {
 						if_block0.p(changed, ctx);
 						if_block0.i(1);
 					} else {
-						if_block0 = create_if_block_3$1(ctx);
+						if_block0 = create_if_block_5$1(ctx);
 						if_block0.c();
 						if_block0.i(1);
 						if_block0.m(t8.parentNode, t8);
@@ -3589,7 +3589,7 @@ var home = (function () {
 					if (if_block1) {
 						if_block1.p(changed, ctx);
 					} else {
-						if_block1 = create_if_block_2$1(ctx);
+						if_block1 = create_if_block_4$1(ctx);
 						if_block1.c();
 						if_block1.m(t9.parentNode, t9);
 					}
@@ -3600,7 +3600,7 @@ var home = (function () {
 
 				if (ctx.create_bill_status.failed) {
 					if (!if_block2) {
-						if_block2 = create_if_block_1$1(ctx);
+						if_block2 = create_if_block_3$1(ctx);
 						if_block2.c();
 						if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
 					}
@@ -3741,7 +3741,7 @@ var home = (function () {
 	}
 
 	// (309:6) {#if modal.cek_ongkir}
-	function create_if_block$2(ctx) {
+	function create_if_block_2$1(ctx) {
 		var updating_show, current;
 
 		function cekongkir_show_binding(value) {
@@ -3794,8 +3794,76 @@ var home = (function () {
 		};
 	}
 
+	// (316:9) {#if iklan.iklan_1.length > 0}
+	function create_if_block_1$1(ctx) {
+		var div, img, img_src_value;
+
+		return {
+			c: function create() {
+				div = element("div");
+				img = element("img");
+				img.src = img_src_value = ctx.iklan.iklan_1;
+				img.alt = "iklan";
+				add_location(img, file$3, 317, 12, 13563);
+				div.className = "uk-width-1-1@s uk-width-1-2@m";
+				add_location(div, file$3, 316, 9, 13506);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div, anchor);
+				append(div, img);
+			},
+
+			p: function update(changed, ctx) {
+				if ((changed.iklan) && img_src_value !== (img_src_value = ctx.iklan.iklan_1)) {
+					img.src = img_src_value;
+				}
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+			}
+		};
+	}
+
+	// (321:9) {#if iklan.iklan_2.length > 0}
+	function create_if_block$2(ctx) {
+		var div, img, img_src_value;
+
+		return {
+			c: function create() {
+				div = element("div");
+				img = element("img");
+				img.src = img_src_value = ctx.iklan.iklan_2;
+				img.alt = "iklan";
+				add_location(img, file$3, 322, 12, 13742);
+				div.className = "uk-width-1-1@s uk-width-1-2@m";
+				add_location(div, file$3, 321, 9, 13685);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div, anchor);
+				append(div, img);
+			},
+
+			p: function update(changed, ctx) {
+				if ((changed.iklan) && img_src_value !== (img_src_value = ctx.iklan.iklan_2)) {
+					img.src = img_src_value;
+				}
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+			}
+		};
+	}
+
 	function create_fragment$3(ctx) {
-		var div28, div27, img0, t0, div7, div6, div5, div1, img1, t1, h30, t2, t3_value = ctx.account_data.name, t3, t4, t5, div0, span0, b0, t7, h2, b1, t8, t9_value = ctx.account_data.str_balance, t9, t10, t11, button0, t13, div4, div3, h31, t15, div2, button1, t17, button2, t19, button3, t21, div10, div8, img2, t22, div9, img3, t23, updating_show, t24, updating_show_1, t25, updating_show_2, t26, updating_show_3, t27, div26, div25, div24, div11, t28, div23, h32, t30, div22, div16, div15, div14, h33, t32, div12, img4, t33, span1, t35, div13, img5, t36, span2, t38, div21, div20, div19, h34, t40, div17, img6, t41, span3, t43, div18, img7, t44, span4, t46, current, dispose;
+		var div30, div29, img0, t0, div7, div6, div5, div1, img1, t1, h30, t2, t3_value = ctx.account_data.name, t3, t4, t5, div0, span0, b0, t7, h2, b1, t8, t9_value = ctx.account_data.str_balance, t9, t10, t11, button0, t13, div4, div3, h31, t15, div2, button1, t17, button2, t19, button3, t21, div10, div8, img2, t22, div9, img3, t23, updating_show, t24, updating_show_1, t25, updating_show_2, t26, updating_show_3, t27, div26, div25, div24, div11, t28, div23, h32, t30, div22, div16, div15, div14, h33, t32, div12, img4, t33, span1, t35, div13, img5, t36, span2, t38, div21, div20, div19, h34, t40, div17, img6, t41, span3, t43, div18, img7, t44, span4, t46, t47, div28, t48, t49, div27, span5, t51, span6, current, dispose;
 
 		function modal0_show_binding(value) {
 			ctx.modal0_show_binding.call(null, value);
@@ -3865,12 +3933,16 @@ var home = (function () {
 
 		add_binding_callback(() => bind(modal3, 'show', modal3_show_binding));
 
-		var if_block = (ctx.modal.cek_ongkir) && create_if_block$2(ctx);
+		var if_block0 = (ctx.modal.cek_ongkir) && create_if_block_2$1(ctx);
+
+		var if_block1 = (ctx.iklan.iklan_1.length > 0) && create_if_block_1$1(ctx);
+
+		var if_block2 = (ctx.iklan.iklan_2.length > 0) && create_if_block$2(ctx);
 
 		return {
 			c: function create() {
-				div28 = element("div");
-				div27 = element("div");
+				div30 = element("div");
+				div29 = element("div");
 				img0 = element("img");
 				t0 = space();
 				div7 = element("div");
@@ -3974,7 +4046,19 @@ var home = (function () {
 				span4 = element("span");
 				span4.textContent = "IAI SEMANGAT";
 				t46 = space();
-				if (if_block) if_block.c();
+				if (if_block0) if_block0.c();
+				t47 = space();
+				div28 = element("div");
+				if (if_block1) if_block1.c();
+				t48 = space();
+				if (if_block2) if_block2.c();
+				t49 = space();
+				div27 = element("div");
+				span5 = element("span");
+				span5.textContent = "Ads by";
+				t51 = space();
+				span6 = element("span");
+				span6.textContent = "Iklanin";
 				img0.className = "uk-align-center";
 				img0.src = "/assets/public/img/logo_arta.png";
 				img0.alt = "logo";
@@ -4102,11 +4186,21 @@ var home = (function () {
 				div26.className = "uk-card uk-card-default";
 				set_style(div26, "margin-top", "24px");
 				add_location(div26, file$3, 261, 6, 10685);
-				div27.className = "uk-width-2-3@m uk-width-1-1@s";
-				set_style(div27, "padding", "12px");
-				add_location(div27, file$3, 1, 3, 88);
-				div28.className = "uk-width-1-1 uk-height-viewport uk-flex uk-flex-center uk-flex-middle";
-				add_location(div28, file$3, 0, 0, 0);
+				span5.className = "ws-title";
+				add_location(span5, file$3, 326, 12, 13885);
+				set_style(span6, "font-size", "12px");
+				add_location(span6, file$3, 327, 12, 13935);
+				div27.className = "uk-width-1-1 uk-flex uk-flex-right";
+				add_location(div27, file$3, 325, 9, 13823);
+				set_style(div28, "margin-bottom", "24px");
+				set_style(div28, "margin-top", "24px");
+				attr(div28, "uk-grid", "");
+				add_location(div28, file$3, 314, 6, 13394);
+				div29.className = "uk-width-2-3@m uk-width-1-1@s";
+				set_style(div29, "padding", "12px");
+				add_location(div29, file$3, 1, 3, 88);
+				div30.className = "uk-width-1-1 uk-height-viewport uk-flex uk-flex-center uk-flex-middle";
+				add_location(div30, file$3, 0, 0, 0);
 
 				dispose = [
 					listen(button0, "click", ctx.click_handler),
@@ -4122,11 +4216,11 @@ var home = (function () {
 			},
 
 			m: function mount(target, anchor) {
-				insert(target, div28, anchor);
-				append(div28, div27);
-				append(div27, img0);
-				append(div27, t0);
-				append(div27, div7);
+				insert(target, div30, anchor);
+				append(div30, div29);
+				append(div29, img0);
+				append(div29, t0);
+				append(div29, div7);
 				append(div7, div6);
 				append(div6, div5);
 				append(div5, div1);
@@ -4159,23 +4253,23 @@ var home = (function () {
 				append(div2, button2);
 				append(div2, t19);
 				append(div2, button3);
-				append(div27, t21);
-				append(div27, div10);
+				append(div29, t21);
+				append(div29, div10);
 				append(div10, div8);
 				append(div8, img2);
 				append(div10, t22);
 				append(div10, div9);
 				append(div9, img3);
-				append(div27, t23);
-				mount_component(modal0, div27, null);
-				append(div27, t24);
-				mount_component(modal1, div27, null);
-				append(div27, t25);
-				mount_component(modal2, div27, null);
-				append(div27, t26);
-				mount_component(modal3, div27, null);
-				append(div27, t27);
-				append(div27, div26);
+				append(div29, t23);
+				mount_component(modal0, div29, null);
+				append(div29, t24);
+				mount_component(modal1, div29, null);
+				append(div29, t25);
+				mount_component(modal2, div29, null);
+				append(div29, t26);
+				mount_component(modal3, div29, null);
+				append(div29, t27);
+				append(div29, div26);
 				append(div26, div25);
 				append(div25, div24);
 				append(div24, div11);
@@ -4213,8 +4307,18 @@ var home = (function () {
 				append(div18, img7);
 				append(div18, t44);
 				append(div18, span4);
-				append(div27, t46);
-				if (if_block) if_block.m(div27, null);
+				append(div29, t46);
+				if (if_block0) if_block0.m(div29, null);
+				append(div29, t47);
+				append(div29, div28);
+				if (if_block1) if_block1.m(div28, null);
+				append(div28, t48);
+				if (if_block2) if_block2.m(div28, null);
+				append(div28, t49);
+				append(div28, div27);
+				append(div27, span5);
+				append(div27, t51);
+				append(div27, span6);
 				current = true;
 			},
 
@@ -4256,24 +4360,50 @@ var home = (function () {
 				modal3.$set(modal3_changes);
 
 				if (ctx.modal.cek_ongkir) {
-					if (if_block) {
-						if_block.p(changed, ctx);
-						if_block.i(1);
+					if (if_block0) {
+						if_block0.p(changed, ctx);
+						if_block0.i(1);
 					} else {
-						if_block = create_if_block$2(ctx);
-						if_block.c();
-						if_block.i(1);
-						if_block.m(div27, null);
+						if_block0 = create_if_block_2$1(ctx);
+						if_block0.c();
+						if_block0.i(1);
+						if_block0.m(div29, t47);
 					}
-				} else if (if_block) {
+				} else if (if_block0) {
 					group_outros();
 					on_outro(() => {
-						if_block.d(1);
-						if_block = null;
+						if_block0.d(1);
+						if_block0 = null;
 					});
 
-					if_block.o(1);
+					if_block0.o(1);
 					check_outros();
+				}
+
+				if (ctx.iklan.iklan_1.length > 0) {
+					if (if_block1) {
+						if_block1.p(changed, ctx);
+					} else {
+						if_block1 = create_if_block_1$1(ctx);
+						if_block1.c();
+						if_block1.m(div28, t48);
+					}
+				} else if (if_block1) {
+					if_block1.d(1);
+					if_block1 = null;
+				}
+
+				if (ctx.iklan.iklan_2.length > 0) {
+					if (if_block2) {
+						if_block2.p(changed, ctx);
+					} else {
+						if_block2 = create_if_block$2(ctx);
+						if_block2.c();
+						if_block2.m(div28, t49);
+					}
+				} else if (if_block2) {
+					if_block2.d(1);
+					if_block2 = null;
 				}
 			},
 
@@ -4287,7 +4417,7 @@ var home = (function () {
 
 				modal3.$$.fragment.i(local);
 
-				if (if_block) if_block.i();
+				if (if_block0) if_block0.i();
 				current = true;
 			},
 
@@ -4296,13 +4426,13 @@ var home = (function () {
 				modal1.$$.fragment.o(local);
 				modal2.$$.fragment.o(local);
 				modal3.$$.fragment.o(local);
-				if (if_block) if_block.o();
+				if (if_block0) if_block0.o();
 				current = false;
 			},
 
 			d: function destroy(detaching) {
 				if (detaching) {
-					detach(div28);
+					detach(div30);
 				}
 
 				modal0.$destroy();
@@ -4313,10 +4443,18 @@ var home = (function () {
 
 				modal3.$destroy();
 
-				if (if_block) if_block.d();
+				if (if_block0) if_block0.d();
+				if (if_block1) if_block1.d();
+				if (if_block2) if_block2.d();
 				run_all(dispose);
 			}
 		};
+	}
+
+	function get_ads(){
+	   return fetch('/service/ads/img-ads').then(result => {
+	      return result.json();
+	   })
 	}
 
 	function instance$2($$self, $$props, $$invalidate) {
@@ -4381,6 +4519,14 @@ var home = (function () {
 	      timer: 5
 	   };
 
+	   const iklan = {
+	      iklan_1: '',
+	      iklan_2: '',
+	      iklan_topup: '',
+	      iklan_payment: '',
+	      iklan_create_bill: '' 
+	   };
+
 	   function reset_topup_status(){
 	      topup_status.success = false; $$invalidate('topup_status', topup_status);
 	      topup_status.failed = false; $$invalidate('topup_status', topup_status);
@@ -4410,6 +4556,19 @@ var home = (function () {
 
 	      get_wallet_data();
 	      get_action();
+
+	      //get iklan
+	      get_ads().then(result => {
+	         iklan.iklan_1 = result.data.url; $$invalidate('iklan', iklan);
+	      }).catch(error => {
+	         console.log(error);
+	      });
+
+	      get_ads().then(result => {
+	         iklan.iklan_2 = result.data.url; $$invalidate('iklan', iklan);
+	      }).catch(error => {
+	         console.log(error);
+	      });
 	   });
 
 	   function do_topup(amount){
@@ -4725,6 +4884,7 @@ var home = (function () {
 			create_bill_amount,
 			create_bill_status,
 			payment,
+			iklan,
 			do_topup,
 			do_create_bill,
 			do_check_payment,
