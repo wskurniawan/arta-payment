@@ -1,2 +1,825 @@
-var app=function(){"use strict";function e(){}function n(e){return e()}function t(){return Object.create(null)}function r(e){e.forEach(n)}function a(e){return"function"==typeof e}function u(e,n){return e!=e?n==n:e!==n||e&&"object"==typeof e||"function"==typeof e}function i(e,n){e.appendChild(n)}function o(e,n,t){e.insertBefore(n,t||null)}function s(e){e.parentNode.removeChild(e)}function c(e){return document.createElement(e)}function l(e){return document.createTextNode(e)}function d(){return l(" ")}function p(e,n,t,r){return e.addEventListener(n,t,r),()=>e.removeEventListener(n,t,r)}function f(e,n,t){null==t?e.removeAttribute(n):e.setAttribute(n,t)}function m(e,n,t){e.style.setProperty(n,t)}let g;function h(e){g=e}const _=[],$=Promise.resolve();let v=!1;const k=[],x=[],y=[];function b(e){x.push(e)}function N(){const e=new Set;do{for(;_.length;){const e=_.shift();h(e),w(e.$$)}for(;k.length;)k.shift()();for(;x.length;){const n=x.pop();e.has(n)||(n(),e.add(n))}}while(_.length);for(;y.length;)y.pop()();v=!1}function w(e){e.fragment&&(e.update(e.dirty),r(e.before_render),e.fragment.p(e.dirty,e.ctx),e.dirty=null,e.after_render.forEach(b))}let T;function E(e,t,u){const{fragment:i,on_mount:o,on_destroy:s,after_render:c}=e.$$;i.m(t,u),b(()=>{const t=o.map(n).filter(a);s?s.push(...t):r(t),e.$$.on_mount=[]}),c.forEach(b)}function C(e,n){e.$$.dirty||(_.push(e),v||(v=!0,$.then(N)),e.$$.dirty=t()),e.$$.dirty[n]=!0}function L(n,a,u,i,o,s){const c=g;h(n);const l=a.props||{},d=n.$$={fragment:null,ctx:null,props:s,update:e,not_equal:o,bound:t(),on_mount:[],on_destroy:[],before_render:[],after_render:[],context:new Map(c?c.$$.context:[]),callbacks:t(),dirty:null};let p=!1;var f;d.ctx=u?u(n,l,(e,t)=>{d.ctx&&o(d.ctx[e],d.ctx[e]=t)&&(d.bound[e]&&d.bound[e](t),p&&C(n,e))}):l,d.update(),p=!0,r(d.before_render),d.fragment=i(d.ctx),a.target&&(a.hydrate?d.fragment.l((f=a.target,Array.from(f.childNodes))):d.fragment.c(),a.intro&&n.$$.fragment.i&&n.$$.fragment.i(),E(n,a.target,a.anchor),N()),h(c)}class A{$destroy(){var n,t;t=!0,(n=this).$$&&(r(n.$$.on_destroy),n.$$.fragment.d(t),n.$$.on_destroy=n.$$.fragment=null,n.$$.ctx={}),this.$destroy=e}$on(e,n){const t=this.$$.callbacks[e]||(this.$$.callbacks[e]=[]);return t.push(n),()=>{const e=t.indexOf(n);-1!==e&&t.splice(e,1)}}$set(){}}function M(n){var t;return{c(){(t=c("div")).innerHTML="<div uk-spinner></div>",t.className="uk-flex uk-flex-center uk-flex-middle",m(t,"padding","24px")},m(e,n){o(e,t,n)},p:e,i:e,o:e,d(e){e&&s(t)}}}class H extends A{constructor(e){super(),L(this,e,null,M,u,[])}}function O(e){var n;return{c(){(n=c("div")).innerHTML='<p>Registeration success, click <a href="/app/login">here</a> to login!</p>',n.className="uk-alert-success",f(n,"uk-alert","")},m(e,t){o(e,n,t)},d(e){e&&s(n)}}}function P(e){var n,t,r,a,u;return{c(){n=c("div"),t=c("p"),r=l("Registeration failed, "),a=l(e.error_message),u=l("!"),n.className="uk-alert-danger",f(n,"uk-alert","")},m(e,s){o(e,n,s),i(n,t),i(t,r),i(t,a),i(t,u)},p(e,n){var t,r;e.error_message&&(t=a,r=""+(r=n.error_message),t.data!==r&&(t.data=r))},d(e){e&&s(n)}}}function S(n){var t,r=new H({});return{c(){r.$$.fragment.c()},m(e,n){E(r,e,n),t=!0},p:e,i(e){t||(r.$$.fragment.i(e),t=!0)},o(e){r.$$.fragment.o(e),t=!1},d(e){r.$destroy(e)}}}function j(n){var t,r;return{c(){(t=c("button")).textContent="SIGN UP",t.className="uk-align-center uk-button uk-button-default ws-blue-btn",r=p(t,"click",n.do_signup)},m(e,n){o(e,t,n)},p:e,i:e,o:e,d(e){e&&s(t),r()}}}function F(e){var n,t,a,u,l,g,h,_,$,v,k,x,y,b,N,w,E,C,L,A,M,H,F,R,U=e.alert.success&&O(),Y=e.alert.fail&&P(e),q=[j,S],B=[];function G(e){return e.loading_signup?1:0}return L=G(e),A=B[L]=q[L](e),{c(){n=c("div"),t=c("div"),U&&U.c(),a=d(),Y&&Y.c(),u=d(),l=c("div"),g=c("div"),(h=c("div")).innerHTML='<img src="/assets/public/img/logo_arta.png" alt="logo">',_=d(),($=c("h5")).innerHTML="<b>CREATE NEW ACCOUNT</b>",v=d(),k=c("div"),x=c("div"),y=c("input"),b=d(),N=c("input"),w=d(),E=c("input"),C=d(),A.c(),M=d(),(H=c("div")).innerHTML='<span>Already have an account? Sign in <a href="/app/login">here!</a></span>',h.className="uk-flex uk-flex-center",$.className="uk-text-center",y.className="uk-input",y.placeholder="Your Name or Company Name",f(y,"type","text"),m(y,"margin-bottom","12px"),N.className="uk-input",N.placeholder="Your Email",f(N,"type","email"),m(N,"margin-bottom","12px"),E.className="uk-input",f(E,"type","password"),E.placeholder="Password",x.className="uk-width-2-3@m uk-width-1-1@s",k.className="uk-flex uk-flex-center",H.className="uk-text-center",g.className="uk-card-body",l.className="uk-card uk-card-default",m(l,"background-color","#F0F2F2"),t.className="uk-width-2-5@m uk-width-1-1@s",m(t,"padding","12px"),n.className="uk-width-1-1 uk-height-viewport uk-flex uk-flex-center uk-flex-middle",R=[p(y,"input",e.input0_input_handler),p(N,"input",e.input1_input_handler),p(E,"input",e.input2_input_handler)]},m(r,s){o(r,n,s),i(n,t),U&&U.m(t,null),i(t,a),Y&&Y.m(t,null),i(t,u),i(t,l),i(l,g),i(g,h),i(g,_),i(g,$),i(g,v),i(g,k),i(k,x),i(x,y),y.value=e.form_input.name,i(x,b),i(x,N),N.value=e.form_input.email,i(x,w),i(x,E),E.value=e.form_input.password,i(x,C),B[L].m(x,null),i(g,M),i(g,H),F=!0},p(e,n){n.alert.success?U||((U=O()).c(),U.m(t,a)):U&&(U.d(1),U=null),n.alert.fail?Y?Y.p(e,n):((Y=P(n)).c(),Y.m(t,u)):Y&&(Y.d(1),Y=null),e.form_input&&y.value!==n.form_input.name&&(y.value=n.form_input.name),e.form_input&&(N.value=n.form_input.email),e.form_input&&(E.value=n.form_input.password);var i,o=L;(L=G(n))===o?B[L].p(e,n):(i=(()=>{B[o].d(1),B[o]=null}),(T={remaining:0,callbacks:[]}).callbacks.push(i),A.o(1),T.remaining||r(T.callbacks),(A=B[L])||(A=B[L]=q[L](n)).c(),A.i(1),A.m(x,null))},i(e){F||(A&&A.i(),F=!0)},o(e){A&&A.o(),F=!1},d(e){e&&s(n),U&&U.d(),Y&&Y.d(),B[L].d(),r(R)}}}function R(e,n,t){const r={success:!1,fail:!1};var a="";const u={name:"",email:"",password:""};var i=!1;return{alert:r,error_message:a,form_input:u,loading_signup:i,do_signup:function(){t("loading_signup",i=!0),r.success=!1,t("alert",r),r.fail=!1,t("alert",r),fetch("/account/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(u)}).then(e=>(t("loading_signup",i=!1),e.ok?(r.success=!0,t("alert",r)):(r.fail=!0,t("alert",r),t("error_message",a=e.statusText)),e.json())).then(e=>{e.success||"validation_error"==e.error||t("error_message",a=e.message)}).catch(e=>{r.fail=!0,t("alert",r),t("error_message",a=e.message),t("loading_signup",i=!1)})},input0_input_handler:function(){u.name=this.value,t("form_input",u)},input1_input_handler:function(){u.email=this.value,t("form_input",u)},input2_input_handler:function(){u.password=this.value,t("form_input",u)}}}return new class extends A{constructor(e){super(),L(this,e,R,F,u,[])}}({target:document.body,props:{name:"signup"}})}();
+
+(function(l, i, v, e) { v = l.createElement(i); v.async = 1; v.src = '//' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; e = l.getElementsByTagName(i)[0]; e.parentNode.insertBefore(v, e)})(document, 'script');
+var app = (function () {
+	'use strict';
+
+	function noop() {}
+
+	function add_location(element, file, line, column, char) {
+		element.__svelte_meta = {
+			loc: { file, line, column, char }
+		};
+	}
+
+	function run(fn) {
+		return fn();
+	}
+
+	function blank_object() {
+		return Object.create(null);
+	}
+
+	function run_all(fns) {
+		fns.forEach(run);
+	}
+
+	function is_function(thing) {
+		return typeof thing === 'function';
+	}
+
+	function safe_not_equal(a, b) {
+		return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+	}
+
+	function append(target, node) {
+		target.appendChild(node);
+	}
+
+	function insert(target, node, anchor) {
+		target.insertBefore(node, anchor || null);
+	}
+
+	function detach(node) {
+		node.parentNode.removeChild(node);
+	}
+
+	function element(name) {
+		return document.createElement(name);
+	}
+
+	function text(data) {
+		return document.createTextNode(data);
+	}
+
+	function space() {
+		return text(' ');
+	}
+
+	function listen(node, event, handler, options) {
+		node.addEventListener(event, handler, options);
+		return () => node.removeEventListener(event, handler, options);
+	}
+
+	function attr(node, attribute, value) {
+		if (value == null) node.removeAttribute(attribute);
+		else node.setAttribute(attribute, value);
+	}
+
+	function children(element) {
+		return Array.from(element.childNodes);
+	}
+
+	function set_data(text, data) {
+		data = '' + data;
+		if (text.data !== data) text.data = data;
+	}
+
+	function set_style(node, key, value) {
+		node.style.setProperty(key, value);
+	}
+
+	let current_component;
+
+	function set_current_component(component) {
+		current_component = component;
+	}
+
+	const dirty_components = [];
+
+	const resolved_promise = Promise.resolve();
+	let update_scheduled = false;
+	const binding_callbacks = [];
+	const render_callbacks = [];
+	const flush_callbacks = [];
+
+	function schedule_update() {
+		if (!update_scheduled) {
+			update_scheduled = true;
+			resolved_promise.then(flush);
+		}
+	}
+
+	function add_render_callback(fn) {
+		render_callbacks.push(fn);
+	}
+
+	function flush() {
+		const seen_callbacks = new Set();
+
+		do {
+			// first, call beforeUpdate functions
+			// and update components
+			while (dirty_components.length) {
+				const component = dirty_components.shift();
+				set_current_component(component);
+				update(component.$$);
+			}
+
+			while (binding_callbacks.length) binding_callbacks.shift()();
+
+			// then, once components are updated, call
+			// afterUpdate functions. This may cause
+			// subsequent updates...
+			while (render_callbacks.length) {
+				const callback = render_callbacks.pop();
+				if (!seen_callbacks.has(callback)) {
+					callback();
+
+					// ...so guard against infinite loops
+					seen_callbacks.add(callback);
+				}
+			}
+		} while (dirty_components.length);
+
+		while (flush_callbacks.length) {
+			flush_callbacks.pop()();
+		}
+
+		update_scheduled = false;
+	}
+
+	function update($$) {
+		if ($$.fragment) {
+			$$.update($$.dirty);
+			run_all($$.before_render);
+			$$.fragment.p($$.dirty, $$.ctx);
+			$$.dirty = null;
+
+			$$.after_render.forEach(add_render_callback);
+		}
+	}
+
+	let outros;
+
+	function group_outros() {
+		outros = {
+			remaining: 0,
+			callbacks: []
+		};
+	}
+
+	function check_outros() {
+		if (!outros.remaining) {
+			run_all(outros.callbacks);
+		}
+	}
+
+	function on_outro(callback) {
+		outros.callbacks.push(callback);
+	}
+
+	function mount_component(component, target, anchor) {
+		const { fragment, on_mount, on_destroy, after_render } = component.$$;
+
+		fragment.m(target, anchor);
+
+		// onMount happens after the initial afterUpdate. Because
+		// afterUpdate callbacks happen in reverse order (inner first)
+		// we schedule onMount callbacks before afterUpdate callbacks
+		add_render_callback(() => {
+			const new_on_destroy = on_mount.map(run).filter(is_function);
+			if (on_destroy) {
+				on_destroy.push(...new_on_destroy);
+			} else {
+				// Edge case - component was destroyed immediately,
+				// most likely as a result of a binding initialising
+				run_all(new_on_destroy);
+			}
+			component.$$.on_mount = [];
+		});
+
+		after_render.forEach(add_render_callback);
+	}
+
+	function destroy(component, detaching) {
+		if (component.$$) {
+			run_all(component.$$.on_destroy);
+			component.$$.fragment.d(detaching);
+
+			// TODO null out other refs, including component.$$ (but need to
+			// preserve final state?)
+			component.$$.on_destroy = component.$$.fragment = null;
+			component.$$.ctx = {};
+		}
+	}
+
+	function make_dirty(component, key) {
+		if (!component.$$.dirty) {
+			dirty_components.push(component);
+			schedule_update();
+			component.$$.dirty = blank_object();
+		}
+		component.$$.dirty[key] = true;
+	}
+
+	function init(component, options, instance, create_fragment, not_equal$$1, prop_names) {
+		const parent_component = current_component;
+		set_current_component(component);
+
+		const props = options.props || {};
+
+		const $$ = component.$$ = {
+			fragment: null,
+			ctx: null,
+
+			// state
+			props: prop_names,
+			update: noop,
+			not_equal: not_equal$$1,
+			bound: blank_object(),
+
+			// lifecycle
+			on_mount: [],
+			on_destroy: [],
+			before_render: [],
+			after_render: [],
+			context: new Map(parent_component ? parent_component.$$.context : []),
+
+			// everything else
+			callbacks: blank_object(),
+			dirty: null
+		};
+
+		let ready = false;
+
+		$$.ctx = instance
+			? instance(component, props, (key, value) => {
+				if ($$.ctx && not_equal$$1($$.ctx[key], $$.ctx[key] = value)) {
+					if ($$.bound[key]) $$.bound[key](value);
+					if (ready) make_dirty(component, key);
+				}
+			})
+			: props;
+
+		$$.update();
+		ready = true;
+		run_all($$.before_render);
+		$$.fragment = create_fragment($$.ctx);
+
+		if (options.target) {
+			if (options.hydrate) {
+				$$.fragment.l(children(options.target));
+			} else {
+				$$.fragment.c();
+			}
+
+			if (options.intro && component.$$.fragment.i) component.$$.fragment.i();
+			mount_component(component, options.target, options.anchor);
+			flush();
+		}
+
+		set_current_component(parent_component);
+	}
+
+	class SvelteComponent {
+		$destroy() {
+			destroy(this, true);
+			this.$destroy = noop;
+		}
+
+		$on(type, callback) {
+			const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+			callbacks.push(callback);
+
+			return () => {
+				const index = callbacks.indexOf(callback);
+				if (index !== -1) callbacks.splice(index, 1);
+			};
+		}
+
+		$set() {
+			// overridden by instance, if it has props
+		}
+	}
+
+	class SvelteComponentDev extends SvelteComponent {
+		constructor(options) {
+			if (!options || (!options.target && !options.$$inline)) {
+				throw new Error(`'target' is a required option`);
+			}
+
+			super();
+		}
+
+		$destroy() {
+			super.$destroy();
+			this.$destroy = () => {
+				console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+			};
+		}
+	}
+
+	/* src/components/loading.svelte generated by Svelte v3.4.2 */
+
+	const file = "src/components/loading.svelte";
+
+	function create_fragment(ctx) {
+		var div1, div0;
+
+		return {
+			c: function create() {
+				div1 = element("div");
+				div0 = element("div");
+				attr(div0, "uk-spinner", "");
+				add_location(div0, file, 1, 3, 79);
+				div1.className = "uk-flex uk-flex-center uk-flex-middle";
+				set_style(div1, "padding", "24px");
+				add_location(div1, file, 0, 0, 0);
+			},
+
+			l: function claim(nodes) {
+				throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div1, anchor);
+				append(div1, div0);
+			},
+
+			p: noop,
+			i: noop,
+			o: noop,
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div1);
+				}
+			}
+		};
+	}
+
+	class Loading extends SvelteComponentDev {
+		constructor(options) {
+			super(options);
+			init(this, options, null, create_fragment, safe_not_equal, []);
+		}
+	}
+
+	/* src/pages/Signup.svelte generated by Svelte v3.4.2 */
+
+	const file$1 = "src/pages/Signup.svelte";
+
+	// (4:2) {#if alert.success}
+	function create_if_block_2(ctx) {
+		var div, p, t0, a, t2;
+
+		return {
+			c: function create() {
+				div = element("div");
+				p = element("p");
+				t0 = text("Registeration success, click ");
+				a = element("a");
+				a.textContent = "here";
+				t2 = text(" to login!");
+				a.href = "/app/login";
+				add_location(a, file$1, 5, 35, 277);
+				add_location(p, file$1, 5, 3, 245);
+				div.className = "uk-alert-success";
+				attr(div, "uk-alert", "");
+				add_location(div, file$1, 4, 2, 201);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div, anchor);
+				append(div, p);
+				append(p, t0);
+				append(p, a);
+				append(p, t2);
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+			}
+		};
+	}
+
+	// (10:2) {#if alert.fail}
+	function create_if_block_1(ctx) {
+		var div, p, t0, t1, t2;
+
+		return {
+			c: function create() {
+				div = element("div");
+				p = element("p");
+				t0 = text("Registeration failed, ");
+				t1 = text(ctx.error_message);
+				t2 = text("!");
+				add_location(p, file$1, 11, 3, 408);
+				div.className = "uk-alert-danger";
+				attr(div, "uk-alert", "");
+				add_location(div, file$1, 10, 2, 365);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div, anchor);
+				append(div, p);
+				append(p, t0);
+				append(p, t1);
+				append(p, t2);
+			},
+
+			p: function update(changed, ctx) {
+				if (changed.error_message) {
+					set_data(t1, ctx.error_message);
+				}
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div);
+				}
+			}
+		};
+	}
+
+	// (35:6) {:else}
+	function create_else_block(ctx) {
+		var current;
+
+		var loading = new Loading({ $$inline: true });
+
+		return {
+			c: function create() {
+				loading.$$.fragment.c();
+			},
+
+			m: function mount(target, anchor) {
+				mount_component(loading, target, anchor);
+				current = true;
+			},
+
+			p: noop,
+
+			i: function intro(local) {
+				if (current) return;
+				loading.$$.fragment.i(local);
+
+				current = true;
+			},
+
+			o: function outro(local) {
+				loading.$$.fragment.o(local);
+				current = false;
+			},
+
+			d: function destroy(detaching) {
+				loading.$destroy(detaching);
+			}
+		};
+	}
+
+	// (31:6) {#if !loading_signup}
+	function create_if_block(ctx) {
+		var button, dispose;
+
+		return {
+			c: function create() {
+				button = element("button");
+				button.textContent = "SIGN UP";
+				button.className = "uk-align-center uk-button uk-button-default ws-blue-btn";
+				add_location(button, file$1, 31, 6, 1311);
+				dispose = listen(button, "click", ctx.do_signup);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, button, anchor);
+			},
+
+			p: noop,
+			i: noop,
+			o: noop,
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(button);
+				}
+
+				dispose();
+			}
+		};
+	}
+
+	function create_fragment$1(ctx) {
+		var div7, div6, t0, t1, div5, div4, div0, img, t2, h5, b, t4, div2, div1, input0, t5, input1, t6, input2, t7, current_block_type_index, if_block2, t8, div3, span, t9, a, current, dispose;
+
+		var if_block0 = (ctx.alert.success) && create_if_block_2(ctx);
+
+		var if_block1 = (ctx.alert.fail) && create_if_block_1(ctx);
+
+		var if_block_creators = [
+			create_if_block,
+			create_else_block
+		];
+
+		var if_blocks = [];
+
+		function select_block_type(ctx) {
+			if (!ctx.loading_signup) return 0;
+			return 1;
+		}
+
+		current_block_type_index = select_block_type(ctx);
+		if_block2 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+
+		return {
+			c: function create() {
+				div7 = element("div");
+				div6 = element("div");
+				if (if_block0) if_block0.c();
+				t0 = space();
+				if (if_block1) if_block1.c();
+				t1 = space();
+				div5 = element("div");
+				div4 = element("div");
+				div0 = element("div");
+				img = element("img");
+				t2 = space();
+				h5 = element("h5");
+				b = element("b");
+				b.textContent = "CREATE NEW ACCOUNT";
+				t4 = space();
+				div2 = element("div");
+				div1 = element("div");
+				input0 = element("input");
+				t5 = space();
+				input1 = element("input");
+				t6 = space();
+				input2 = element("input");
+				t7 = space();
+				if_block2.c();
+				t8 = space();
+				div3 = element("div");
+				span = element("span");
+				t9 = text("Already have an account? Sign in ");
+				a = element("a");
+				a.textContent = "here!";
+				img.src = "/assets/public/img/logo_arta.png";
+				img.alt = "logo";
+				add_location(img, file$1, 20, 5, 667);
+				div0.className = "uk-flex uk-flex-center";
+				add_location(div0, file$1, 19, 4, 624);
+				add_location(b, file$1, 23, 31, 769);
+				h5.className = "uk-text-center";
+				add_location(h5, file$1, 23, 4, 742);
+				input0.className = "uk-input";
+				input0.placeholder = "Your Name or Company Name";
+				attr(input0, "type", "text");
+				set_style(input0, "margin-bottom", "12px");
+				add_location(input0, file$1, 26, 6, 899);
+				input1.className = "uk-input";
+				input1.placeholder = "Your Email";
+				attr(input1, "type", "email");
+				set_style(input1, "margin-bottom", "12px");
+				add_location(input1, file$1, 27, 6, 1041);
+				input2.className = "uk-input";
+				attr(input2, "type", "password");
+				input2.placeholder = "Password";
+				add_location(input2, file$1, 28, 6, 1170);
+				div1.className = "uk-width-2-3@m uk-width-1-1@s";
+				add_location(div1, file$1, 25, 5, 848);
+				div2.className = "uk-flex uk-flex-center";
+				add_location(div2, file$1, 24, 4, 805);
+				a.href = "/app/login";
+				add_location(a, file$1, 41, 44, 1599);
+				add_location(span, file$1, 41, 5, 1560);
+				div3.className = "uk-text-center";
+				add_location(div3, file$1, 40, 4, 1525);
+				div4.className = "uk-card-body";
+				add_location(div4, file$1, 18, 3, 592);
+				div5.className = "uk-card uk-card-default";
+				set_style(div5, "background-color", "#F0F2F2");
+				add_location(div5, file$1, 17, 2, 516);
+				div6.className = "uk-width-2-5@m uk-width-1-1@s";
+				set_style(div6, "padding", "12px");
+				add_location(div6, file$1, 1, 1, 86);
+				div7.className = "uk-width-1-1 uk-height-viewport uk-flex uk-flex-center uk-flex-middle";
+				add_location(div7, file$1, 0, 0, 0);
+
+				dispose = [
+					listen(input0, "input", ctx.input0_input_handler),
+					listen(input1, "input", ctx.input1_input_handler),
+					listen(input2, "input", ctx.input2_input_handler)
+				];
+			},
+
+			l: function claim(nodes) {
+				throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div7, anchor);
+				append(div7, div6);
+				if (if_block0) if_block0.m(div6, null);
+				append(div6, t0);
+				if (if_block1) if_block1.m(div6, null);
+				append(div6, t1);
+				append(div6, div5);
+				append(div5, div4);
+				append(div4, div0);
+				append(div0, img);
+				append(div4, t2);
+				append(div4, h5);
+				append(h5, b);
+				append(div4, t4);
+				append(div4, div2);
+				append(div2, div1);
+				append(div1, input0);
+
+				input0.value = ctx.form_input.name;
+
+				append(div1, t5);
+				append(div1, input1);
+
+				input1.value = ctx.form_input.email;
+
+				append(div1, t6);
+				append(div1, input2);
+
+				input2.value = ctx.form_input.password;
+
+				append(div1, t7);
+				if_blocks[current_block_type_index].m(div1, null);
+				append(div4, t8);
+				append(div4, div3);
+				append(div3, span);
+				append(span, t9);
+				append(span, a);
+				current = true;
+			},
+
+			p: function update(changed, ctx) {
+				if (ctx.alert.success) {
+					if (!if_block0) {
+						if_block0 = create_if_block_2(ctx);
+						if_block0.c();
+						if_block0.m(div6, t0);
+					}
+				} else if (if_block0) {
+					if_block0.d(1);
+					if_block0 = null;
+				}
+
+				if (ctx.alert.fail) {
+					if (if_block1) {
+						if_block1.p(changed, ctx);
+					} else {
+						if_block1 = create_if_block_1(ctx);
+						if_block1.c();
+						if_block1.m(div6, t1);
+					}
+				} else if (if_block1) {
+					if_block1.d(1);
+					if_block1 = null;
+				}
+
+				if (changed.form_input && (input0.value !== ctx.form_input.name)) input0.value = ctx.form_input.name;
+				if (changed.form_input) input1.value = ctx.form_input.email;
+				if (changed.form_input) input2.value = ctx.form_input.password;
+
+				var previous_block_index = current_block_type_index;
+				current_block_type_index = select_block_type(ctx);
+				if (current_block_type_index === previous_block_index) {
+					if_blocks[current_block_type_index].p(changed, ctx);
+				} else {
+					group_outros();
+					on_outro(() => {
+						if_blocks[previous_block_index].d(1);
+						if_blocks[previous_block_index] = null;
+					});
+					if_block2.o(1);
+					check_outros();
+
+					if_block2 = if_blocks[current_block_type_index];
+					if (!if_block2) {
+						if_block2 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+						if_block2.c();
+					}
+					if_block2.i(1);
+					if_block2.m(div1, null);
+				}
+			},
+
+			i: function intro(local) {
+				if (current) return;
+				if (if_block2) if_block2.i();
+				current = true;
+			},
+
+			o: function outro(local) {
+				if (if_block2) if_block2.o();
+				current = false;
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div7);
+				}
+
+				if (if_block0) if_block0.d();
+				if (if_block1) if_block1.d();
+				if_blocks[current_block_type_index].d();
+				run_all(dispose);
+			}
+		};
+	}
+
+	function instance($$self, $$props, $$invalidate) {
+		const alert = {
+			success: false,
+			fail: false
+		};
+
+		var error_message = '';
+
+		const form_input = {
+			name: '',
+			email: '',
+			password: ''
+		};
+		
+		var loading_signup = false;
+		
+
+		function do_signup(){
+			$$invalidate('loading_signup', loading_signup = true);
+			
+			alert.success = false; $$invalidate('alert', alert);
+			alert.fail = false; $$invalidate('alert', alert);
+
+			fetch('/account/register', { 
+				method: 'POST', 
+				headers: {
+					'Content-Type': 'application/json' 
+				},
+				body: JSON.stringify(form_input) 
+			}).then(response => {
+				$$invalidate('loading_signup', loading_signup = false);
+
+				if(!response.ok){
+					alert.fail = true; $$invalidate('alert', alert);
+					$$invalidate('error_message', error_message = response.statusText);
+				}else{
+					alert.success = true; $$invalidate('alert', alert);
+				}
+
+				return response.json();
+			}).then(result => {
+				if(!result.success && result.error != 'validation_error'){
+					$$invalidate('error_message', error_message = result.message);
+				}
+				
+			}).catch(error => {
+				alert.fail = true; $$invalidate('alert', alert);
+				$$invalidate('error_message', error_message = error.message);
+
+				$$invalidate('loading_signup', loading_signup = false);
+			});
+		}
+
+		function input0_input_handler() {
+			form_input.name = this.value;
+			$$invalidate('form_input', form_input);
+		}
+
+		function input1_input_handler() {
+			form_input.email = this.value;
+			$$invalidate('form_input', form_input);
+		}
+
+		function input2_input_handler() {
+			form_input.password = this.value;
+			$$invalidate('form_input', form_input);
+		}
+
+		return {
+			alert,
+			error_message,
+			form_input,
+			loading_signup,
+			do_signup,
+			input0_input_handler,
+			input1_input_handler,
+			input2_input_handler
+		};
+	}
+
+	class Signup extends SvelteComponentDev {
+		constructor(options) {
+			super(options);
+			init(this, options, instance, create_fragment$1, safe_not_equal, []);
+		}
+	}
+
+	const app = new Signup({
+	   target: document.body,
+	   props:{
+	      name: 'signup'
+	   }
+	});
+
+	return app;
+
+}());
 //# sourceMappingURL=signup.js.map

@@ -13,7 +13,7 @@ const model: Model<document_type> = mongoose.model('account', schema);
 
 export async function insert(data: account_type): Promise<boolean>{
    try {
-      var result = await model.create(data);
+      await model.create(data);
    } catch (error) {
       return Promise.reject(error);
    }

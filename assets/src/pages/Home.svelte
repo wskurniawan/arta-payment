@@ -42,7 +42,15 @@
       </div>
       <!-- end -->
 
-      <!-- integration feature -->
+      <!-- adds -->
+      <div uk-grid style="margin-top: 24px;">
+         <div class="uk-width-1-2@m uk-width-1-1@s">
+            <img src="/assets/public/img/ad_arta_1.png" alt="ads">
+         </div>
+         <div class="uk-width-1-2@m uk-width-1-1@s">
+            <img src="/assets/public/img/ad_arta_2.png" alt="ads">
+         </div>
+      </div>
       <!-- end -->
 
       <!-- modal topup -->
@@ -250,6 +258,58 @@
       </Modal>
       <!-- end -->
 
+      <!-- arta platform service -->
+      <div class="uk-card uk-card-default" style="margin-top: 24px;">
+         <div class="uk-card-body">
+            <div uk-grid>
+               <div class="uk-width-1-3@m uk-width-1-1@s">
+
+               </div>
+               <div class="uk-width-2-3@m uk-width-1-1@s">
+                  <h3 class="ws-title">ARTA PLATFORM</h3>
+                  <div class="uk-width-1-1" uk-grid>
+                     <div class="uk-width-1-2@m uk-width-1-1@s">
+                        <div class="uk-card uk-card-default">
+                           <div class="uk-card-body">
+                              <h3 class="ws-title-small">Arta Logistik</h3>
+                              <div class="uk-button uk-button-link" style="padding: 0px;" on:click={() => modal.cek_ongkir = true}>
+                                 <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
+                                 <span class="ws-title">CEK ONGKIR</span>
+                              </div>
+                              <div class="uk-button uk-button-link" style="padding: 0px;">
+                                 <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
+                                 <span class="ws-title">CEK RESI</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="uk-width-1-2@m uk-width-1-1@s">
+                        <div class="uk-card uk-card-default">
+                           <div class="uk-card-body">
+                              <h3 class="ws-title-small">Arta Ads</h3>
+                              <div class="uk-button uk-button-link" style="padding: 0px;">
+                                 <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
+                                 <span class="ws-title">IKLAN.IN</span>
+                              </div>
+                              <div class="uk-button uk-button-link" style="padding: 0px;">
+                                 <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
+                                 <span class="ws-title">IAI SEMANGAT</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end -->
+
+      <!-- modal cek ongkir -->
+      {#if modal.cek_ongkir}
+      <CekOngkir bind:show={modal.cek_ongkir}></CekOngkir>
+      {/if}
+      <!-- end -->
    </div>
 </div>
 
@@ -257,6 +317,7 @@
    import Modal from './../components/modal.svelte';
    import { onMount } from 'svelte';
    import Loading from './../components/loading.svelte';
+   import CekOngkir from './../components/CekOngkir.svelte';
    
    var query_param = new URLSearchParams(window.location.search);
    var session = query_param.get('session');
@@ -266,7 +327,8 @@
       topup: false,
       do_payment: false,
       publish_payment: false,
-      profile: false
+      profile: false,
+      cek_ongkir: false
    }
 
    const account_data = {
@@ -496,7 +558,7 @@
    }
 
    function get_action(){
-      if(session_id.length === 0){
+      if(session_id === null){
          return;
       }
 
