@@ -124,6 +124,22 @@
       <span class="ws-title">Powered by </span>
       <span style="font-size: 12px; margin-left: 12px">PJT-Logistik</span>
    </div>
+
+   {#if list_iklan.length > 0}
+   <div class="uk-width-1-1" style="margin-top: 24px">
+      <div class="uk-card uk-card-default uk-card-body" style="padding: 12px;">
+         <h3 class="ws-title">
+            { list_iklan[current_iklan].nama_toko }
+         </h3>
+         <span>{ list_iklan[current_iklan].isi_iklan }</span>
+         
+         <div class="uk-flex uk-flex-right">
+            <span class="ws-title">Ads by </span>
+            <span style="font-size: 12px; margin-left: 12px;">OBED</span>
+         </div>
+      </div>
+   </div>
+   {/if}
 </Modal>
 
 <script>
@@ -136,6 +152,8 @@
    var list_province = [];
    var list_origin_city = [];
    var list_dest_city = [];
+   var list_iklan = [];
+   var current_iklan = 0;
 
    var result_list = [];
 
@@ -230,8 +248,31 @@
       });
    }
 
+   function get_text_ads(){
+      // if (navigator.geolocation) {
+      //    navigator.geolocation.getCurrentPosition((position) => {
+            
+      //    }, (error) => {
+      //       console.log(error);
+      //    });
+      // } else {
+      //    console.log("Geolocation is not supported by this browser.");
+      // }
+      var queryParam = new URLSearchParams();
+      queryParam.set('lat', '-7.7661619');
+      queryParam.set('lng', '110.3715815')
+
+      fetch('/service/ads/txt-ads?' + queryParam).then(result => result.json()).then(result => {
+         list_iklan = result.data;
+         current_iklan = Date.now() % list_iklan.length;
+      }).catch(error => {
+         console.log(error);
+      });
+   }
+
    onMount(() => {
       get_province_list();
+      get_text_ads();
    });
 
    

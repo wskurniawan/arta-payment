@@ -44,10 +44,10 @@
 
       <!-- adds -->
       <div uk-grid style="margin-top: 24px;">
-         <div class="uk-width-1-2@m uk-width-1-1@s" style="padding: 12px;">
+         <div class="uk-width-1-2@m uk-width-1-1@s" style="padding: 4px;">
             <img src="/assets/public/img/ad_arta_1.png" alt="ads">
          </div>
-         <div class="uk-width-1-2@m uk-width-1-1@s" style="padding: 12px;">
+         <div class="uk-width-1-2@m uk-width-1-1@s" style="padding: 4px;">
             <img src="/assets/public/img/ad_arta_2.png" alt="ads">
          </div>
       </div>
@@ -281,7 +281,7 @@
                                  <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
                                  <span class="ws-title">CEK ONGKIR</span>
                               </div>
-                              <div class="uk-button uk-button-link" style="padding: 0px;">
+                              <div class="uk-button uk-button-link" style="padding: 0px;" on:click={() => modal.cek_resi = true }>
                                  <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
                                  <span class="ws-title">CEK RESI</span>
                               </div>
@@ -292,11 +292,11 @@
                         <div class="uk-card uk-card-default">
                            <div class="uk-card-body">
                               <h3 class="ws-title-small">Arta Ads</h3>
-                              <div class="uk-button uk-button-link" style="padding: 0px;">
+                              <div style="padding: 0px;">
                                  <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
                                  <span class="ws-title">IKLAN.IN</span>
                               </div>
-                              <div class="uk-button uk-button-link" style="padding: 0px;">
+                              <div style="padding: 0px;">
                                  <img src="/assets/public/img/delivery-truck.png" width="32" alt="pjt logo">
                                  <span class="ws-title">IAI SEMANGAT</span>
                               </div>
@@ -322,15 +322,21 @@
       {/if}
       <!-- end -->
 
+      <!-- modal cek resi -->
+      {#if modal.cek_resi}
+      <CekResi bind:show={modal.cek_resi}></CekResi>
+      {/if}
+      <!-- end -->
+
       <!-- iklanin ads -->
       <div style="margin-bottom: 24px; margin-top: 24px;" uk-grid>
          {#if iklan.iklan_1.length > 0}
-         <div class="uk-width-1-1@s uk-width-1-2@m">
+         <div class="uk-width-1-1@s uk-width-1-2@m" style="padding: 4px;">
             <img src={iklan.iklan_1} alt="iklan">
          </div>
          {/if}
          {#if iklan.iklan_2.length > 0}
-         <div class="uk-width-1-1@s uk-width-1-2@m">
+         <div class="uk-width-1-1@s uk-width-1-2@m" style="padding: 4px;">
             <img src={iklan.iklan_2} alt="iklan">
          </div>
          {/if}
@@ -349,6 +355,7 @@
    import Loading from './../components/loading.svelte';
    import CekOngkir from './../components/CekOngkir.svelte';
    import ModalKuis from './../components/ModalKuis.svelte';
+   import CekResi from '../components/CekResi.svelte';
    
    var query_param = new URLSearchParams(window.location.search);
    var session = query_param.get('session');
@@ -360,7 +367,8 @@
       publish_payment: false,
       profile: false,
       cek_ongkir: false,
-      kuis: false
+      kuis: false,
+      cek_resi: false
    }
 
    const account_data = {

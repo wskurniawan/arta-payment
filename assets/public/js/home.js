@@ -699,26 +699,26 @@ var home = (function () {
 	}
 
 	// (3:3) {#if !loading.get_cost}
-	function create_if_block_1(ctx) {
+	function create_if_block_2(ctx) {
 		var div6, h30, t1, div2, div0, t2, t3, div1, t4, t5, h31, t7, div5, div3, t8, t9, div4, t10, t11, h32, t13, input, t14, current, dispose;
 
-		var if_block0 = (ctx.loading.load_province) && create_if_block_10(ctx);
+		var if_block0 = (ctx.loading.load_province) && create_if_block_11(ctx);
 
-		var if_block1 = (!ctx.loading.load_province) && create_if_block_9(ctx);
+		var if_block1 = (!ctx.loading.load_province) && create_if_block_10(ctx);
 
-		var if_block2 = (ctx.loading.load_origin_city) && create_if_block_8(ctx);
+		var if_block2 = (ctx.loading.load_origin_city) && create_if_block_9(ctx);
 
-		var if_block3 = (ctx.origin.province_id.length > 0 && !ctx.loading.load_origin_city) && create_if_block_7(ctx);
+		var if_block3 = (ctx.origin.province_id.length > 0 && !ctx.loading.load_origin_city) && create_if_block_8(ctx);
 
-		var if_block4 = (ctx.loading.load_province) && create_if_block_6(ctx);
+		var if_block4 = (ctx.loading.load_province) && create_if_block_7(ctx);
 
-		var if_block5 = (!ctx.loading.load_province) && create_if_block_5(ctx);
+		var if_block5 = (!ctx.loading.load_province) && create_if_block_6(ctx);
 
-		var if_block6 = (ctx.loading.load_dest_city) && create_if_block_4(ctx);
+		var if_block6 = (ctx.loading.load_dest_city) && create_if_block_5(ctx);
 
-		var if_block7 = (ctx.destination.province_id.length > 0 && !ctx.loading.load_dest_city) && create_if_block_3(ctx);
+		var if_block7 = (ctx.destination.province_id.length > 0 && !ctx.loading.load_dest_city) && create_if_block_4(ctx);
 
-		var if_block8 = (ctx.origin.city_id.length > 0 && ctx.destination.city_id.length > 0) && create_if_block_2(ctx);
+		var if_block8 = (ctx.origin.city_id.length > 0 && ctx.destination.city_id.length > 0) && create_if_block_3(ctx);
 
 		return {
 			c: function create() {
@@ -824,7 +824,7 @@ var home = (function () {
 			p: function update(changed, ctx) {
 				if (ctx.loading.load_province) {
 					if (!if_block0) {
-						if_block0 = create_if_block_10(ctx);
+						if_block0 = create_if_block_11(ctx);
 						if_block0.c();
 						if_block0.i(1);
 						if_block0.m(div0, t2);
@@ -846,7 +846,7 @@ var home = (function () {
 					if (if_block1) {
 						if_block1.p(changed, ctx);
 					} else {
-						if_block1 = create_if_block_9(ctx);
+						if_block1 = create_if_block_10(ctx);
 						if_block1.c();
 						if_block1.m(div0, null);
 					}
@@ -857,7 +857,7 @@ var home = (function () {
 
 				if (ctx.loading.load_origin_city) {
 					if (!if_block2) {
-						if_block2 = create_if_block_8(ctx);
+						if_block2 = create_if_block_9(ctx);
 						if_block2.c();
 						if_block2.i(1);
 						if_block2.m(div1, t4);
@@ -879,7 +879,7 @@ var home = (function () {
 					if (if_block3) {
 						if_block3.p(changed, ctx);
 					} else {
-						if_block3 = create_if_block_7(ctx);
+						if_block3 = create_if_block_8(ctx);
 						if_block3.c();
 						if_block3.m(div1, null);
 					}
@@ -890,7 +890,7 @@ var home = (function () {
 
 				if (ctx.loading.load_province) {
 					if (!if_block4) {
-						if_block4 = create_if_block_6(ctx);
+						if_block4 = create_if_block_7(ctx);
 						if_block4.c();
 						if_block4.i(1);
 						if_block4.m(div3, t8);
@@ -912,7 +912,7 @@ var home = (function () {
 					if (if_block5) {
 						if_block5.p(changed, ctx);
 					} else {
-						if_block5 = create_if_block_5(ctx);
+						if_block5 = create_if_block_6(ctx);
 						if_block5.c();
 						if_block5.m(div3, null);
 					}
@@ -923,7 +923,7 @@ var home = (function () {
 
 				if (ctx.loading.load_dest_city) {
 					if (!if_block6) {
-						if_block6 = create_if_block_4(ctx);
+						if_block6 = create_if_block_5(ctx);
 						if_block6.c();
 						if_block6.i(1);
 						if_block6.m(div4, t10);
@@ -945,7 +945,7 @@ var home = (function () {
 					if (if_block7) {
 						if_block7.p(changed, ctx);
 					} else {
-						if_block7 = create_if_block_3(ctx);
+						if_block7 = create_if_block_4(ctx);
 						if_block7.c();
 						if_block7.m(div4, null);
 					}
@@ -960,7 +960,7 @@ var home = (function () {
 					if (if_block8) {
 						if_block8.p(changed, ctx);
 					} else {
-						if_block8 = create_if_block_2(ctx);
+						if_block8 = create_if_block_3(ctx);
 						if_block8.c();
 						if_block8.m(div6, null);
 					}
@@ -1007,7 +1007,7 @@ var home = (function () {
 	}
 
 	// (9:12) {#if loading.load_province}
-	function create_if_block_10(ctx) {
+	function create_if_block_11(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -1041,7 +1041,7 @@ var home = (function () {
 	}
 
 	// (13:12) {#if !loading.load_province}
-	function create_if_block_9(ctx) {
+	function create_if_block_10(ctx) {
 		var label, t_1, div, select, dispose;
 
 		var each_value_4 = ctx.list_province;
@@ -1170,7 +1170,7 @@ var home = (function () {
 	}
 
 	// (25:12) {#if loading.load_origin_city}
-	function create_if_block_8(ctx) {
+	function create_if_block_9(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -1204,7 +1204,7 @@ var home = (function () {
 	}
 
 	// (29:12) {#if origin.province_id.length > 0 && !loading.load_origin_city}
-	function create_if_block_7(ctx) {
+	function create_if_block_8(ctx) {
 		var label, t_1, div, select, dispose;
 
 		var each_value_3 = ctx.list_origin_city;
@@ -1329,7 +1329,7 @@ var home = (function () {
 	}
 
 	// (47:12) {#if loading.load_province}
-	function create_if_block_6(ctx) {
+	function create_if_block_7(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -1363,7 +1363,7 @@ var home = (function () {
 	}
 
 	// (51:12) {#if !loading.load_province}
-	function create_if_block_5(ctx) {
+	function create_if_block_6(ctx) {
 		var label, t_1, div, select, dispose;
 
 		var each_value_2 = ctx.list_province;
@@ -1492,7 +1492,7 @@ var home = (function () {
 	}
 
 	// (63:12) {#if loading.load_dest_city}
-	function create_if_block_4(ctx) {
+	function create_if_block_5(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -1526,7 +1526,7 @@ var home = (function () {
 	}
 
 	// (67:12) {#if destination.province_id.length > 0 && !loading.load_dest_city}
-	function create_if_block_3(ctx) {
+	function create_if_block_4(ctx) {
 		var label, t_1, div, select, dispose;
 
 		var each_value_1 = ctx.list_dest_city;
@@ -1651,7 +1651,7 @@ var home = (function () {
 	}
 
 	// (86:6) {#if origin.city_id.length > 0 && destination.city_id.length > 0}
-	function create_if_block_2(ctx) {
+	function create_if_block_3(ctx) {
 		var div, button, dispose;
 
 		return {
@@ -1685,7 +1685,7 @@ var home = (function () {
 	}
 
 	// (98:3) {#if display_result}
-	function create_if_block$1(ctx) {
+	function create_if_block_1(ctx) {
 		var div, h3, t1, table, thead, tr, th0, t3, th1, t5, th2, t7, tbody;
 
 		var each_value = ctx.result_list;
@@ -1853,12 +1853,83 @@ var home = (function () {
 		};
 	}
 
+	// (128:3) {#if list_iklan.length > 0}
+	function create_if_block$1(ctx) {
+		var div2, div1, h3, t0_value = ctx.list_iklan[ctx.current_iklan].nama_toko, t0, t1, span0, t2_value = ctx.list_iklan[ctx.current_iklan].isi_iklan, t2, t3, div0, span1, t5, span2;
+
+		return {
+			c: function create() {
+				div2 = element("div");
+				div1 = element("div");
+				h3 = element("h3");
+				t0 = text(t0_value);
+				t1 = space();
+				span0 = element("span");
+				t2 = text(t2_value);
+				t3 = space();
+				div0 = element("div");
+				span1 = element("span");
+				span1.textContent = "Ads by";
+				t5 = space();
+				span2 = element("span");
+				span2.textContent = "OBED";
+				h3.className = "ws-title";
+				add_location(h3, file$2, 130, 9, 4805);
+				add_location(span0, file$2, 133, 9, 4906);
+				span1.className = "ws-title";
+				add_location(span1, file$2, 136, 12, 5029);
+				set_style(span2, "font-size", "12px");
+				set_style(span2, "margin-left", "12px");
+				add_location(span2, file$2, 137, 12, 5080);
+				div0.className = "uk-flex uk-flex-right";
+				add_location(div0, file$2, 135, 9, 4980);
+				div1.className = "uk-card uk-card-default uk-card-body";
+				set_style(div1, "padding", "12px");
+				add_location(div1, file$2, 129, 6, 4721);
+				div2.className = "uk-width-1-1";
+				set_style(div2, "margin-top", "24px");
+				add_location(div2, file$2, 128, 3, 4662);
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, div2, anchor);
+				append(div2, div1);
+				append(div1, h3);
+				append(h3, t0);
+				append(div1, t1);
+				append(div1, span0);
+				append(span0, t2);
+				append(div1, t3);
+				append(div1, div0);
+				append(div0, span1);
+				append(div0, t5);
+				append(div0, span2);
+			},
+
+			p: function update(changed, ctx) {
+				if ((changed.list_iklan || changed.current_iklan) && t0_value !== (t0_value = ctx.list_iklan[ctx.current_iklan].nama_toko)) {
+					set_data(t0, t0_value);
+				}
+
+				if ((changed.list_iklan || changed.current_iklan) && t2_value !== (t2_value = ctx.list_iklan[ctx.current_iklan].isi_iklan)) {
+					set_data(t2, t2_value);
+				}
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(div2);
+				}
+			}
+		};
+	}
+
 	// (1:0) <Modal bind:show={show}>
 	function create_default_slot(ctx) {
-		var current_block_type_index, if_block0, t0, t1, div, span0, t3, span1, current;
+		var current_block_type_index, if_block0, t0, t1, div, span0, t3, span1, t5, if_block2_anchor, current;
 
 		var if_block_creators = [
-			create_if_block_1,
+			create_if_block_2,
 			create_else_block
 		];
 
@@ -1872,7 +1943,9 @@ var home = (function () {
 		current_block_type_index = select_block_type(ctx);
 		if_block0 = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
-		var if_block1 = (ctx.display_result) && create_if_block$1(ctx);
+		var if_block1 = (ctx.display_result) && create_if_block_1(ctx);
+
+		var if_block2 = (ctx.list_iklan.length > 0) && create_if_block$1(ctx);
 
 		return {
 			c: function create() {
@@ -1886,6 +1959,9 @@ var home = (function () {
 				t3 = space();
 				span1 = element("span");
 				span1.textContent = "PJT-Logistik";
+				t5 = space();
+				if (if_block2) if_block2.c();
+				if_block2_anchor = empty();
 				span0.className = "ws-title";
 				add_location(span0, file$2, 123, 6, 4495);
 				set_style(span1, "font-size", "12px");
@@ -1905,6 +1981,9 @@ var home = (function () {
 				append(div, span0);
 				append(div, t3);
 				append(div, span1);
+				insert(target, t5, anchor);
+				if (if_block2) if_block2.m(target, anchor);
+				insert(target, if_block2_anchor, anchor);
 				current = true;
 			},
 
@@ -1935,13 +2014,26 @@ var home = (function () {
 					if (if_block1) {
 						if_block1.p(changed, ctx);
 					} else {
-						if_block1 = create_if_block$1(ctx);
+						if_block1 = create_if_block_1(ctx);
 						if_block1.c();
 						if_block1.m(t1.parentNode, t1);
 					}
 				} else if (if_block1) {
 					if_block1.d(1);
 					if_block1 = null;
+				}
+
+				if (ctx.list_iklan.length > 0) {
+					if (if_block2) {
+						if_block2.p(changed, ctx);
+					} else {
+						if_block2 = create_if_block$1(ctx);
+						if_block2.c();
+						if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
+					}
+				} else if (if_block2) {
+					if_block2.d(1);
+					if_block2 = null;
 				}
 			},
 
@@ -1968,6 +2060,13 @@ var home = (function () {
 				if (detaching) {
 					detach(t1);
 					detach(div);
+					detach(t5);
+				}
+
+				if (if_block2) if_block2.d(detaching);
+
+				if (detaching) {
+					detach(if_block2_anchor);
 				}
 			}
 		};
@@ -2009,7 +2108,7 @@ var home = (function () {
 
 			p: function update(changed, ctx) {
 				var modal_changes = {};
-				if (changed.$$scope || changed.display_result || changed.result_list || changed.loading || changed.origin || changed.destination || changed.packet_weight || changed.list_dest_city || changed.list_province || changed.list_origin_city) modal_changes.$$scope = { changed, ctx };
+				if (changed.$$scope || changed.list_iklan || changed.current_iklan || changed.display_result || changed.result_list || changed.loading || changed.origin || changed.destination || changed.packet_weight || changed.list_dest_city || changed.list_province || changed.list_origin_city) modal_changes.$$scope = { changed, ctx };
 				if (!updating_show && changed.show) {
 					modal_changes.show = ctx.show;
 				}
@@ -2046,6 +2145,8 @@ var home = (function () {
 	   var list_province = [];
 	   var list_origin_city = [];
 	   var list_dest_city = [];
+	   var list_iklan = [];
+	   var current_iklan = 0;
 
 	   var result_list = [];
 
@@ -2136,8 +2237,31 @@ var home = (function () {
 	      });
 	   }
 
+	   function get_text_ads(){
+	      // if (navigator.geolocation) {
+	      //    navigator.geolocation.getCurrentPosition((position) => {
+	            
+	      //    }, (error) => {
+	      //       console.log(error);
+	      //    });
+	      // } else {
+	      //    console.log("Geolocation is not supported by this browser.");
+	      // }
+	      var queryParam = new URLSearchParams();
+	      queryParam.set('lat', '-7.7661619');
+	      queryParam.set('lng', '110.3715815');
+
+	      fetch('/service/ads/txt-ads?' + queryParam).then(result => result.json()).then(result => {
+	         $$invalidate('list_iklan', list_iklan = result.data);
+	         $$invalidate('current_iklan', current_iklan = Date.now() % list_iklan.length);
+	      }).catch(error => {
+	         console.log(error);
+	      });
+	   }
+
 	   onMount(() => {
 	      get_province_list();
+	      get_text_ads();
 	   });
 
 		function select_change_handler() {
@@ -2183,6 +2307,8 @@ var home = (function () {
 			list_province,
 			list_origin_city,
 			list_dest_city,
+			list_iklan,
+			current_iklan,
 			result_list,
 			loading,
 			display_result,
@@ -2921,12 +3047,126 @@ var home = (function () {
 		}
 	}
 
+	/* src/components/CekResi.svelte generated by Svelte v3.4.2 */
+
+	// (1:0) <Modal bind:show={show}>
+	function create_default_slot$2(ctx) {
+		var t;
+
+		return {
+			c: function create() {
+				t = text("Halo");
+			},
+
+			m: function mount(target, anchor) {
+				insert(target, t, anchor);
+			},
+
+			d: function destroy(detaching) {
+				if (detaching) {
+					detach(t);
+				}
+			}
+		};
+	}
+
+	function create_fragment$4(ctx) {
+		var updating_show, current;
+
+		function modal_show_binding(value) {
+			ctx.modal_show_binding.call(null, value);
+			updating_show = true;
+			add_flush_callback(() => updating_show = false);
+		}
+
+		let modal_props = {
+			$$slots: { default: [create_default_slot$2] },
+			$$scope: { ctx }
+		};
+		if (ctx.show !== void 0) {
+			modal_props.show = ctx.show;
+		}
+		var modal = new Modal({ props: modal_props, $$inline: true });
+
+		add_binding_callback(() => bind(modal, 'show', modal_show_binding));
+
+		return {
+			c: function create() {
+				modal.$$.fragment.c();
+			},
+
+			l: function claim(nodes) {
+				throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+			},
+
+			m: function mount(target, anchor) {
+				mount_component(modal, target, anchor);
+				current = true;
+			},
+
+			p: function update(changed, ctx) {
+				var modal_changes = {};
+				if (changed.$$scope) modal_changes.$$scope = { changed, ctx };
+				if (!updating_show && changed.show) {
+					modal_changes.show = ctx.show;
+				}
+				modal.$set(modal_changes);
+			},
+
+			i: function intro(local) {
+				if (current) return;
+				modal.$$.fragment.i(local);
+
+				current = true;
+			},
+
+			o: function outro(local) {
+				modal.$$.fragment.o(local);
+				current = false;
+			},
+
+			d: function destroy(detaching) {
+				modal.$destroy(detaching);
+			}
+		};
+	}
+
+	function instance$3($$self, $$props, $$invalidate) {
+		let { show = false } = $$props;
+
+		function modal_show_binding(value) {
+			show = value;
+			$$invalidate('show', show);
+		}
+
+		$$self.$set = $$props => {
+			if ('show' in $$props) $$invalidate('show', show = $$props.show);
+		};
+
+		return { show, modal_show_binding };
+	}
+
+	class CekResi extends SvelteComponentDev {
+		constructor(options) {
+			super(options);
+			init(this, options, instance$3, create_fragment$4, safe_not_equal, ["show"]);
+		}
+
+		get show() {
+			throw new Error("<CekResi>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+		}
+
+		set show(value) {
+			throw new Error("<CekResi>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+		}
+	}
+
 	/* src/pages/Home.svelte generated by Svelte v3.4.2 */
 
 	const file$4 = "src/pages/Home.svelte";
 
 	// (67:9) {#if !loading.topup && !topup_status.success && !topup_status.failed}
-	function create_if_block_19(ctx) {
+	function create_if_block_20(ctx) {
 		var div6, div0, uk_button0, t1, div1, uk_button1, t3, div2, uk_button2, t5, div3, uk_button3, t7, div4, uk_button4, t9, div5, uk_button5, dispose;
 
 		return {
@@ -2956,37 +3196,37 @@ var home = (function () {
 				uk_button5 = element("uk-button");
 				uk_button5.textContent = "Rp. 1,000,0000.00";
 				uk_button0.className = "uk-button uk-button-default ws-blue-btn uk-width-1-1";
-				add_location(uk_button0, file$4, 69, 15, 3315);
+				add_location(uk_button0, file$4, 69, 15, 3313);
 				div0.className = "uk-width-1-2@m uk-width-1-1@s";
 				set_style(div0, "padding", "4px");
-				add_location(div0, file$4, 68, 12, 3233);
+				add_location(div0, file$4, 68, 12, 3231);
 				uk_button1.className = "uk-button uk-button-default ws-blue-btn uk-width-1-1";
-				add_location(uk_button1, file$4, 74, 15, 3599);
+				add_location(uk_button1, file$4, 74, 15, 3597);
 				div1.className = "uk-width-1-2@m uk-width-1-1@s";
 				set_style(div1, "padding", "4px");
-				add_location(div1, file$4, 73, 12, 3517);
+				add_location(div1, file$4, 73, 12, 3515);
 				uk_button2.className = "uk-button uk-button-default ws-blue-btn uk-width-1-1";
-				add_location(uk_button2, file$4, 79, 15, 3885);
+				add_location(uk_button2, file$4, 79, 15, 3883);
 				div2.className = "uk-width-1-2@m uk-width-1-1@s";
 				set_style(div2, "padding", "4px");
-				add_location(div2, file$4, 78, 12, 3803);
+				add_location(div2, file$4, 78, 12, 3801);
 				uk_button3.className = "uk-button uk-button-default ws-blue-btn uk-width-1-1";
-				add_location(uk_button3, file$4, 84, 15, 4172);
+				add_location(uk_button3, file$4, 84, 15, 4170);
 				div3.className = "uk-width-1-2@m uk-width-1-1@s";
 				set_style(div3, "padding", "4px");
-				add_location(div3, file$4, 83, 12, 4090);
+				add_location(div3, file$4, 83, 12, 4088);
 				uk_button4.className = "uk-button uk-button-default ws-blue-btn uk-width-1-1";
-				add_location(uk_button4, file$4, 89, 15, 4459);
+				add_location(uk_button4, file$4, 89, 15, 4457);
 				div4.className = "uk-width-1-2@m uk-width-1-1@s";
 				set_style(div4, "padding", "4px");
-				add_location(div4, file$4, 88, 12, 4377);
+				add_location(div4, file$4, 88, 12, 4375);
 				uk_button5.className = "uk-button uk-button-default ws-blue-btn uk-width-1-1";
-				add_location(uk_button5, file$4, 94, 15, 4746);
+				add_location(uk_button5, file$4, 94, 15, 4744);
 				div5.className = "uk-width-1-2@m uk-width-1-1@s";
 				set_style(div5, "padding", "4px");
-				add_location(div5, file$4, 93, 12, 4664);
+				add_location(div5, file$4, 93, 12, 4662);
 				attr(div6, "uk-grid", "");
-				add_location(div6, file$4, 67, 9, 3206);
+				add_location(div6, file$4, 67, 9, 3204);
 
 				dispose = [
 					listen(uk_button0, "click", ctx.click_handler_4),
@@ -3030,7 +3270,7 @@ var home = (function () {
 	}
 
 	// (102:9) {#if loading.topup}
-	function create_if_block_18(ctx) {
+	function create_if_block_19(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -3064,7 +3304,7 @@ var home = (function () {
 	}
 
 	// (107:9) {#if topup_status.success}
-	function create_if_block_17(ctx) {
+	function create_if_block_18(ctx) {
 		var div1, div0, h3;
 
 		return {
@@ -3074,11 +3314,11 @@ var home = (function () {
 				h3 = element("h3");
 				h3.textContent = "Topup Sucess";
 				h3.className = "uk-text-success uk-text-center";
-				add_location(h3, file$4, 109, 15, 5228);
+				add_location(h3, file$4, 109, 15, 5226);
 				div0.className = "uk-card-body";
-				add_location(div0, file$4, 108, 12, 5185);
+				add_location(div0, file$4, 108, 12, 5183);
 				div1.className = "uk-card uk-card-default";
-				add_location(div1, file$4, 107, 9, 5134);
+				add_location(div1, file$4, 107, 9, 5132);
 			},
 
 			m: function mount(target, anchor) {
@@ -3096,7 +3336,7 @@ var home = (function () {
 	}
 
 	// (117:9) {#if topup_status.failed}
-	function create_if_block_16(ctx) {
+	function create_if_block_17(ctx) {
 		var div1, div0, h3;
 
 		return {
@@ -3106,11 +3346,11 @@ var home = (function () {
 				h3 = element("h3");
 				h3.textContent = "Topup Failed";
 				h3.className = "uk-text-danger uk-text-center";
-				add_location(h3, file$4, 119, 15, 5539);
+				add_location(h3, file$4, 119, 15, 5537);
 				div0.className = "uk-card-body";
-				add_location(div0, file$4, 118, 12, 5496);
+				add_location(div0, file$4, 118, 12, 5494);
 				div1.className = "uk-card uk-card-default";
-				add_location(div1, file$4, 117, 9, 5445);
+				add_location(div1, file$4, 117, 9, 5443);
 			},
 
 			m: function mount(target, anchor) {
@@ -3131,13 +3371,13 @@ var home = (function () {
 	function create_default_slot_3(ctx) {
 		var h4, b0, t1, div, span, b1, t3, h2, b2, t4, t5_value = ctx.account_data.str_balance, t5, t6, t7, t8, t9, t10, if_block3_anchor, current;
 
-		var if_block0 = (!ctx.loading.topup && !ctx.topup_status.success && !ctx.topup_status.failed) && create_if_block_19(ctx);
+		var if_block0 = (!ctx.loading.topup && !ctx.topup_status.success && !ctx.topup_status.failed) && create_if_block_20(ctx);
 
-		var if_block1 = (ctx.loading.topup) && create_if_block_18(ctx);
+		var if_block1 = (ctx.loading.topup) && create_if_block_19(ctx);
 
-		var if_block2 = (ctx.topup_status.success) && create_if_block_17(ctx);
+		var if_block2 = (ctx.topup_status.success) && create_if_block_18(ctx);
 
-		var if_block3 = (ctx.topup_status.failed) && create_if_block_16(ctx);
+		var if_block3 = (ctx.topup_status.failed) && create_if_block_17(ctx);
 
 		return {
 			c: function create() {
@@ -3164,16 +3404,16 @@ var home = (function () {
 				t10 = space();
 				if (if_block3) if_block3.c();
 				if_block3_anchor = empty();
-				add_location(b0, file$4, 58, 12, 2896);
+				add_location(b0, file$4, 58, 12, 2894);
 				h4.className = "uk-text-center";
-				add_location(h4, file$4, 57, 9, 2855);
-				add_location(b1, file$4, 62, 35, 3006);
+				add_location(h4, file$4, 57, 9, 2853);
+				add_location(b1, file$4, 62, 35, 3004);
 				span.className = "ws-title";
-				add_location(span, file$4, 62, 12, 2983);
-				add_location(b2, file$4, 63, 16, 3051);
-				add_location(h2, file$4, 63, 12, 3047);
+				add_location(span, file$4, 62, 12, 2981);
+				add_location(b2, file$4, 63, 16, 3049);
+				add_location(h2, file$4, 63, 12, 3045);
 				div.className = "uk-text-center";
-				add_location(div, file$4, 61, 9, 2941);
+				add_location(div, file$4, 61, 9, 2939);
 			},
 
 			m: function mount(target, anchor) {
@@ -3208,7 +3448,7 @@ var home = (function () {
 
 				if (!ctx.loading.topup && !ctx.topup_status.success && !ctx.topup_status.failed) {
 					if (!if_block0) {
-						if_block0 = create_if_block_19(ctx);
+						if_block0 = create_if_block_20(ctx);
 						if_block0.c();
 						if_block0.m(t8.parentNode, t8);
 					}
@@ -3219,7 +3459,7 @@ var home = (function () {
 
 				if (ctx.loading.topup) {
 					if (!if_block1) {
-						if_block1 = create_if_block_18(ctx);
+						if_block1 = create_if_block_19(ctx);
 						if_block1.c();
 						if_block1.i(1);
 						if_block1.m(t9.parentNode, t9);
@@ -3239,7 +3479,7 @@ var home = (function () {
 
 				if (ctx.topup_status.success) {
 					if (!if_block2) {
-						if_block2 = create_if_block_17(ctx);
+						if_block2 = create_if_block_18(ctx);
 						if_block2.c();
 						if_block2.m(t10.parentNode, t10);
 					}
@@ -3250,7 +3490,7 @@ var home = (function () {
 
 				if (ctx.topup_status.failed) {
 					if (!if_block3) {
-						if_block3 = create_if_block_16(ctx);
+						if_block3 = create_if_block_17(ctx);
 						if_block3.c();
 						if_block3.m(if_block3_anchor.parentNode, if_block3_anchor);
 					}
@@ -3307,7 +3547,7 @@ var home = (function () {
 	}
 
 	// (132:9) {#if payment.display_error}
-	function create_if_block_15(ctx) {
+	function create_if_block_16(ctx) {
 		var div, p, t0, t1_value = ctx.payment.error_message, t1, t2;
 
 		return {
@@ -3317,10 +3557,10 @@ var home = (function () {
 				t0 = text("Error: ");
 				t1 = text(t1_value);
 				t2 = text("!");
-				add_location(p, file$4, 133, 12, 5926);
+				add_location(p, file$4, 133, 12, 5924);
 				div.className = "uk-alert-danger";
 				attr(div, "uk-alert", "");
-				add_location(div, file$4, 132, 9, 5874);
+				add_location(div, file$4, 132, 9, 5872);
 			},
 
 			m: function mount(target, anchor) {
@@ -3346,7 +3586,7 @@ var home = (function () {
 	}
 
 	// (138:9) {#if payment.display_success}
-	function create_if_block_14(ctx) {
+	function create_if_block_15(ctx) {
 		var div, p;
 
 		return {
@@ -3354,10 +3594,10 @@ var home = (function () {
 				div = element("div");
 				p = element("p");
 				p.textContent = "Payment success.";
-				add_location(p, file$4, 139, 12, 6103);
+				add_location(p, file$4, 139, 12, 6101);
 				div.className = "uk-alert-success";
 				attr(div, "uk-alert", "");
-				add_location(div, file$4, 138, 9, 6050);
+				add_location(div, file$4, 138, 9, 6048);
 			},
 
 			m: function mount(target, anchor) {
@@ -3374,7 +3614,7 @@ var home = (function () {
 	}
 
 	// (155:9) {#if !payment.display_data}
-	function create_if_block_13(ctx) {
+	function create_if_block_14(ctx) {
 		var div, h5, t1, input, t2, button, dispose;
 
 		return {
@@ -3387,15 +3627,15 @@ var home = (function () {
 				t2 = space();
 				button = element("button");
 				button.textContent = "CHECK";
-				add_location(h5, file$4, 156, 12, 6561);
+				add_location(h5, file$4, 156, 12, 6559);
 				input.className = "uk-input";
 				input.placeholder = "enter payment code";
-				add_location(input, file$4, 157, 12, 6604);
+				add_location(input, file$4, 157, 12, 6602);
 				button.className = "uk-button uk-button-default ws-blue-btn";
 				set_style(button, "margin-top", "12px");
-				add_location(button, file$4, 159, 12, 6703);
+				add_location(button, file$4, 159, 12, 6701);
 				div.className = "uk-text-center";
-				add_location(div, file$4, 155, 9, 6519);
+				add_location(div, file$4, 155, 9, 6517);
 
 				dispose = [
 					listen(input, "input", ctx.input_input_handler),
@@ -3430,14 +3670,14 @@ var home = (function () {
 	}
 
 	// (164:9) {#if payment.display_data}
-	function create_if_block_8$1(ctx) {
+	function create_if_block_9$1(ctx) {
 		var div2, div1, span0, t1, h3, t2_value = ctx.payment.data.publisher, t2, t3, span1, t5, h2, t6, t7_value = ctx.Number.parseInt(ctx.payment.data.amount).toLocaleString(), t7, t8, t9, div0, t10, t11, current;
 
-		var if_block0 = (!ctx.payment.loading_pay && !ctx.payment.complete) && create_if_block_11(ctx);
+		var if_block0 = (!ctx.payment.loading_pay && !ctx.payment.complete) && create_if_block_12(ctx);
 
-		var if_block1 = (ctx.payment.loading_pay) && create_if_block_10$1(ctx);
+		var if_block1 = (ctx.payment.loading_pay) && create_if_block_11$1(ctx);
 
-		var if_block2 = (ctx.payment.complete && ctx.payment.is_redirect) && create_if_block_9$1(ctx);
+		var if_block2 = (ctx.payment.complete && ctx.payment.is_redirect) && create_if_block_10$1(ctx);
 
 		return {
 			c: function create() {
@@ -3463,16 +3703,16 @@ var home = (function () {
 				if (if_block1) if_block1.c();
 				t11 = space();
 				if (if_block2) if_block2.c();
-				add_location(span0, file$4, 166, 15, 7015);
-				add_location(h3, file$4, 167, 15, 7054);
-				add_location(span1, file$4, 168, 15, 7104);
-				add_location(h2, file$4, 169, 15, 7140);
+				add_location(span0, file$4, 166, 15, 7013);
+				add_location(h3, file$4, 167, 15, 7052);
+				add_location(span1, file$4, 168, 15, 7102);
+				add_location(h2, file$4, 169, 15, 7138);
 				div0.className = "uk-align-center";
-				add_location(div0, file$4, 171, 15, 7230);
+				add_location(div0, file$4, 171, 15, 7228);
 				div1.className = "uk-width-1-1 uk-text-center";
-				add_location(div1, file$4, 165, 12, 6957);
+				add_location(div1, file$4, 165, 12, 6955);
 				div2.className = "uk-card uk-card-body";
-				add_location(div2, file$4, 164, 9, 6909);
+				add_location(div2, file$4, 164, 9, 6907);
 			},
 
 			m: function mount(target, anchor) {
@@ -3512,7 +3752,7 @@ var home = (function () {
 					if (if_block0) {
 						if_block0.p(changed, ctx);
 					} else {
-						if_block0 = create_if_block_11(ctx);
+						if_block0 = create_if_block_12(ctx);
 						if_block0.c();
 						if_block0.m(div0, t10);
 					}
@@ -3523,7 +3763,7 @@ var home = (function () {
 
 				if (ctx.payment.loading_pay) {
 					if (!if_block1) {
-						if_block1 = create_if_block_10$1(ctx);
+						if_block1 = create_if_block_11$1(ctx);
 						if_block1.c();
 						if_block1.i(1);
 						if_block1.m(div0, t11);
@@ -3545,7 +3785,7 @@ var home = (function () {
 					if (if_block2) {
 						if_block2.p(changed, ctx);
 					} else {
-						if_block2 = create_if_block_9$1(ctx);
+						if_block2 = create_if_block_10$1(ctx);
 						if_block2.c();
 						if_block2.m(div0, null);
 					}
@@ -3579,11 +3819,11 @@ var home = (function () {
 	}
 
 	// (173:18) {#if !payment.loading_pay && !payment.complete}
-	function create_if_block_11(ctx) {
+	function create_if_block_12(ctx) {
 		var div;
 
 		function select_block_type(ctx) {
-			if (ctx.payment.data.amount < ctx.account_data.balance) return create_if_block_12;
+			if (ctx.payment.data.amount < ctx.account_data.balance) return create_if_block_13;
 			return create_else_block_1;
 		}
 
@@ -3594,7 +3834,7 @@ var home = (function () {
 			c: function create() {
 				div = element("div");
 				if_block.c();
-				add_location(div, file$4, 173, 21, 7349);
+				add_location(div, file$4, 173, 21, 7347);
 			},
 
 			m: function mount(target, anchor) {
@@ -3637,9 +3877,9 @@ var home = (function () {
 				button = element("button");
 				button.textContent = "TOPUP";
 				h3.className = "uk-text-danger ws-title";
-				add_location(h3, file$4, 179, 24, 7658);
+				add_location(h3, file$4, 179, 24, 7656);
 				button.className = "uk-button uk-button-default ws-blue-btn";
-				add_location(button, file$4, 180, 24, 7759);
+				add_location(button, file$4, 180, 24, 7757);
 				dispose = listen(button, "click", ctx.do_topup_from_payment);
 			},
 
@@ -3664,7 +3904,7 @@ var home = (function () {
 	}
 
 	// (175:24) {#if payment.data.amount < account_data.balance}
-	function create_if_block_12(ctx) {
+	function create_if_block_13(ctx) {
 		var button, dispose;
 
 		return {
@@ -3672,7 +3912,7 @@ var home = (function () {
 				button = element("button");
 				button.textContent = "PAY";
 				button.className = "uk-button uk-button-default ws-blue-btn";
-				add_location(button, file$4, 175, 24, 7454);
+				add_location(button, file$4, 175, 24, 7452);
 				dispose = listen(button, "click", ctx.do_payment);
 			},
 
@@ -3693,7 +3933,7 @@ var home = (function () {
 	}
 
 	// (187:18) {#if payment.loading_pay}
-	function create_if_block_10$1(ctx) {
+	function create_if_block_11$1(ctx) {
 		var current;
 
 		var loading_1 = new Loading({ $$inline: true });
@@ -3727,7 +3967,7 @@ var home = (function () {
 	}
 
 	// (190:18) {#if payment.complete && payment.is_redirect}
-	function create_if_block_9$1(ctx) {
+	function create_if_block_10$1(ctx) {
 		var span, t0, t1_value = ctx.payment.timer, t1, t2;
 
 		return {
@@ -3737,7 +3977,7 @@ var home = (function () {
 				t1 = text(t1_value);
 				t2 = text("...");
 				span.className = "uk-text-center";
-				add_location(span, file$4, 190, 21, 8202);
+				add_location(span, file$4, 190, 21, 8200);
 			},
 
 			m: function mount(target, anchor) {
@@ -3765,13 +4005,13 @@ var home = (function () {
 	function create_default_slot_2(ctx) {
 		var t0, t1, h4, b0, t3, div, span, b1, t5, h2, b2, t6, t7_value = ctx.account_data.str_balance, t7, t8, t9, t10, if_block3_anchor, current;
 
-		var if_block0 = (ctx.payment.display_error) && create_if_block_15(ctx);
+		var if_block0 = (ctx.payment.display_error) && create_if_block_16(ctx);
 
-		var if_block1 = (ctx.payment.display_success) && create_if_block_14(ctx);
+		var if_block1 = (ctx.payment.display_success) && create_if_block_15(ctx);
 
-		var if_block2 = (!ctx.payment.display_data) && create_if_block_13(ctx);
+		var if_block2 = (!ctx.payment.display_data) && create_if_block_14(ctx);
 
-		var if_block3 = (ctx.payment.display_data) && create_if_block_8$1(ctx);
+		var if_block3 = (ctx.payment.display_data) && create_if_block_9$1(ctx);
 
 		return {
 			c: function create() {
@@ -3798,16 +4038,16 @@ var home = (function () {
 				t10 = space();
 				if (if_block3) if_block3.c();
 				if_block3_anchor = empty();
-				add_location(b0, file$4, 146, 12, 6247);
+				add_location(b0, file$4, 146, 12, 6245);
 				h4.className = "uk-text-center";
-				add_location(h4, file$4, 145, 9, 6206);
-				add_location(b1, file$4, 150, 35, 6361);
+				add_location(h4, file$4, 145, 9, 6204);
+				add_location(b1, file$4, 150, 35, 6359);
 				span.className = "ws-title";
-				add_location(span, file$4, 150, 12, 6338);
-				add_location(b2, file$4, 151, 16, 6406);
-				add_location(h2, file$4, 151, 12, 6402);
+				add_location(span, file$4, 150, 12, 6336);
+				add_location(b2, file$4, 151, 16, 6404);
+				add_location(h2, file$4, 151, 12, 6400);
 				div.className = "uk-text-center";
-				add_location(div, file$4, 149, 9, 6296);
+				add_location(div, file$4, 149, 9, 6294);
 			},
 
 			m: function mount(target, anchor) {
@@ -3840,7 +4080,7 @@ var home = (function () {
 					if (if_block0) {
 						if_block0.p(changed, ctx);
 					} else {
-						if_block0 = create_if_block_15(ctx);
+						if_block0 = create_if_block_16(ctx);
 						if_block0.c();
 						if_block0.m(t0.parentNode, t0);
 					}
@@ -3851,7 +4091,7 @@ var home = (function () {
 
 				if (ctx.payment.display_success) {
 					if (!if_block1) {
-						if_block1 = create_if_block_14(ctx);
+						if_block1 = create_if_block_15(ctx);
 						if_block1.c();
 						if_block1.m(t1.parentNode, t1);
 					}
@@ -3868,7 +4108,7 @@ var home = (function () {
 					if (if_block2) {
 						if_block2.p(changed, ctx);
 					} else {
-						if_block2 = create_if_block_13(ctx);
+						if_block2 = create_if_block_14(ctx);
 						if_block2.c();
 						if_block2.m(t10.parentNode, t10);
 					}
@@ -3882,7 +4122,7 @@ var home = (function () {
 						if_block3.p(changed, ctx);
 						if_block3.i(1);
 					} else {
-						if_block3 = create_if_block_8$1(ctx);
+						if_block3 = create_if_block_9$1(ctx);
 						if_block3.c();
 						if_block3.i(1);
 						if_block3.m(if_block3_anchor.parentNode, if_block3_anchor);
@@ -3943,11 +4183,11 @@ var home = (function () {
 	}
 
 	// (211:9) {#if !loading.create_bill && !create_bill_status.success && !create_bill_status.fail}
-	function create_if_block_6$2(ctx) {
+	function create_if_block_7$2(ctx) {
 		var div, h5, t1, input, t2, current_block_type_index, if_block, current, dispose;
 
 		var if_block_creators = [
-			create_if_block_7$2,
+			create_if_block_8$1,
 			create_else_block$1
 		];
 
@@ -3970,13 +4210,13 @@ var home = (function () {
 				input = element("input");
 				t2 = space();
 				if_block.c();
-				add_location(h5, file$4, 212, 12, 8917);
+				add_location(h5, file$4, 212, 12, 8915);
 				input.className = "uk-input uk-text-center";
 				input.placeholder = "enter amount";
 				attr(input, "type", "number");
-				add_location(input, file$4, 213, 12, 8951);
+				add_location(input, file$4, 213, 12, 8949);
 				div.className = "uk-text-center";
-				add_location(div, file$4, 211, 9, 8875);
+				add_location(div, file$4, 211, 9, 8873);
 				dispose = listen(input, "input", ctx.input_input_handler_1);
 			},
 
@@ -4078,7 +4318,7 @@ var home = (function () {
 	}
 
 	// (216:12) {#if !loading.create_bill}
-	function create_if_block_7$2(ctx) {
+	function create_if_block_8$1(ctx) {
 		var button, dispose;
 
 		return {
@@ -4087,7 +4327,7 @@ var home = (function () {
 				button.textContent = "CREATE";
 				button.className = "uk-button uk-button-default ws-blue-btn";
 				set_style(button, "margin-top", "12px");
-				add_location(button, file$4, 216, 12, 9119);
+				add_location(button, file$4, 216, 12, 9117);
 				dispose = listen(button, "click", ctx.do_create_bill);
 			},
 
@@ -4110,7 +4350,7 @@ var home = (function () {
 	}
 
 	// (224:9) {#if create_bill_status.success}
-	function create_if_block_5$2(ctx) {
+	function create_if_block_6$2(ctx) {
 		var div1, div0, h5, span, t1, t2, input, dispose;
 
 		return {
@@ -4124,17 +4364,17 @@ var home = (function () {
 				t2 = space();
 				input = element("input");
 				span.className = "uk-text-success";
-				add_location(span, file$4, 226, 19, 9520);
-				add_location(h5, file$4, 226, 15, 9516);
+				add_location(span, file$4, 226, 19, 9518);
+				add_location(h5, file$4, 226, 15, 9514);
 				input.className = "uk-input uk-text-center";
 				input.placeholder = "wallet token";
 				input.disabled = true;
-				add_location(input, file$4, 227, 15, 9606);
+				add_location(input, file$4, 227, 15, 9604);
 				div0.className = "uk-text-center";
 				set_style(div0, "margin-top", "24px");
-				add_location(div0, file$4, 225, 12, 9445);
+				add_location(div0, file$4, 225, 12, 9443);
 				div1.className = "uk-text-center";
-				add_location(div1, file$4, 224, 9, 9403);
+				add_location(div1, file$4, 224, 9, 9401);
 				dispose = listen(input, "input", ctx.input_input_handler_2);
 			},
 
@@ -4165,7 +4405,7 @@ var home = (function () {
 	}
 
 	// (233:9) {#if create_bill_status.failed}
-	function create_if_block_4$2(ctx) {
+	function create_if_block_5$2(ctx) {
 		var div1, div0, h3;
 
 		return {
@@ -4175,11 +4415,11 @@ var home = (function () {
 				h3 = element("h3");
 				h3.textContent = "Failed to create bill";
 				h3.className = "uk-text-danger uk-text-center";
-				add_location(h3, file$4, 235, 15, 9928);
+				add_location(h3, file$4, 235, 15, 9926);
 				div0.className = "uk-card-body";
-				add_location(div0, file$4, 234, 12, 9885);
+				add_location(div0, file$4, 234, 12, 9883);
 				div1.className = "uk-card uk-card-default";
-				add_location(div1, file$4, 233, 9, 9834);
+				add_location(div1, file$4, 233, 9, 9832);
 			},
 
 			m: function mount(target, anchor) {
@@ -4200,11 +4440,11 @@ var home = (function () {
 	function create_default_slot_1(ctx) {
 		var h4, b0, t1, div, span, b1, t3, h2, b2, t4, t5_value = ctx.account_data.str_balance, t5, t6, t7, t8, t9, if_block2_anchor, current;
 
-		var if_block0 = (!ctx.loading.create_bill && !ctx.create_bill_status.success && !ctx.create_bill_status.fail) && create_if_block_6$2(ctx);
+		var if_block0 = (!ctx.loading.create_bill && !ctx.create_bill_status.success && !ctx.create_bill_status.fail) && create_if_block_7$2(ctx);
 
-		var if_block1 = (ctx.create_bill_status.success) && create_if_block_5$2(ctx);
+		var if_block1 = (ctx.create_bill_status.success) && create_if_block_6$2(ctx);
 
-		var if_block2 = (ctx.create_bill_status.failed) && create_if_block_4$2(ctx);
+		var if_block2 = (ctx.create_bill_status.failed) && create_if_block_5$2(ctx);
 
 		return {
 			c: function create() {
@@ -4229,16 +4469,16 @@ var home = (function () {
 				t9 = space();
 				if (if_block2) if_block2.c();
 				if_block2_anchor = empty();
-				add_location(b0, file$4, 202, 12, 8543);
+				add_location(b0, file$4, 202, 12, 8541);
 				h4.className = "uk-text-center";
-				add_location(h4, file$4, 201, 9, 8502);
-				add_location(b1, file$4, 206, 35, 8659);
+				add_location(h4, file$4, 201, 9, 8500);
+				add_location(b1, file$4, 206, 35, 8657);
 				span.className = "ws-title";
-				add_location(span, file$4, 206, 12, 8636);
-				add_location(b2, file$4, 207, 16, 8704);
-				add_location(h2, file$4, 207, 12, 8700);
+				add_location(span, file$4, 206, 12, 8634);
+				add_location(b2, file$4, 207, 16, 8702);
+				add_location(h2, file$4, 207, 12, 8698);
 				div.className = "uk-text-center";
-				add_location(div, file$4, 205, 9, 8594);
+				add_location(div, file$4, 205, 9, 8592);
 			},
 
 			m: function mount(target, anchor) {
@@ -4274,7 +4514,7 @@ var home = (function () {
 						if_block0.p(changed, ctx);
 						if_block0.i(1);
 					} else {
-						if_block0 = create_if_block_6$2(ctx);
+						if_block0 = create_if_block_7$2(ctx);
 						if_block0.c();
 						if_block0.i(1);
 						if_block0.m(t8.parentNode, t8);
@@ -4294,7 +4534,7 @@ var home = (function () {
 					if (if_block1) {
 						if_block1.p(changed, ctx);
 					} else {
-						if_block1 = create_if_block_5$2(ctx);
+						if_block1 = create_if_block_6$2(ctx);
 						if_block1.c();
 						if_block1.m(t9.parentNode, t9);
 					}
@@ -4305,7 +4545,7 @@ var home = (function () {
 
 				if (ctx.create_bill_status.failed) {
 					if (!if_block2) {
-						if_block2 = create_if_block_4$2(ctx);
+						if_block2 = create_if_block_5$2(ctx);
 						if_block2.c();
 						if_block2.m(if_block2_anchor.parentNode, if_block2_anchor);
 					}
@@ -4356,7 +4596,7 @@ var home = (function () {
 	}
 
 	// (244:6) <Modal bind:show={modal.profile}>
-	function create_default_slot$2(ctx) {
+	function create_default_slot$3(ctx) {
 		var h4, b0, t1, div0, span, b1, t3, h2, b2, t4, t5_value = ctx.account_data.str_balance, t5, t6, t7, div1, h5, t9, input, dispose;
 
 		return {
@@ -4381,23 +4621,23 @@ var home = (function () {
 				h5.textContent = "YOUR TOKEN";
 				t9 = space();
 				input = element("input");
-				add_location(b0, file$4, 245, 12, 10210);
+				add_location(b0, file$4, 245, 12, 10208);
 				h4.className = "uk-text-center";
-				add_location(h4, file$4, 244, 9, 10169);
-				add_location(b1, file$4, 249, 35, 10321);
+				add_location(h4, file$4, 244, 9, 10167);
+				add_location(b1, file$4, 249, 35, 10319);
 				span.className = "ws-title";
-				add_location(span, file$4, 249, 12, 10298);
-				add_location(b2, file$4, 250, 16, 10366);
-				add_location(h2, file$4, 250, 12, 10362);
+				add_location(span, file$4, 249, 12, 10296);
+				add_location(b2, file$4, 250, 16, 10364);
+				add_location(h2, file$4, 250, 12, 10360);
 				div0.className = "uk-text-center";
-				add_location(div0, file$4, 248, 9, 10256);
-				add_location(h5, file$4, 254, 12, 10483);
+				add_location(div0, file$4, 248, 9, 10254);
+				add_location(h5, file$4, 254, 12, 10481);
 				input.className = "uk-input uk-text-center";
 				input.placeholder = "wallet token";
 				input.disabled = true;
-				add_location(input, file$4, 255, 12, 10516);
+				add_location(input, file$4, 255, 12, 10514);
 				div1.className = "uk-text-center";
-				add_location(div1, file$4, 253, 9, 10441);
+				add_location(div1, file$4, 253, 9, 10439);
 				dispose = listen(input, "input", ctx.input_input_handler_3);
 			},
 
@@ -4446,7 +4686,7 @@ var home = (function () {
 	}
 
 	// (314:6) {#if modal.cek_ongkir}
-	function create_if_block_3$2(ctx) {
+	function create_if_block_4$2(ctx) {
 		var updating_show, current;
 
 		function cekongkir_show_binding(value) {
@@ -4500,7 +4740,7 @@ var home = (function () {
 	}
 
 	// (320:6) {#if modal.kuis}
-	function create_if_block_2$2(ctx) {
+	function create_if_block_3$2(ctx) {
 		var updating_show, current;
 
 		function modalkuis_show_binding(value) {
@@ -4553,7 +4793,61 @@ var home = (function () {
 		};
 	}
 
-	// (327:9) {#if iklan.iklan_1.length > 0}
+	// (326:6) {#if modal.cek_resi}
+	function create_if_block_2$2(ctx) {
+		var updating_show, current;
+
+		function cekresi_show_binding(value) {
+			ctx.cekresi_show_binding.call(null, value);
+			updating_show = true;
+			add_flush_callback(() => updating_show = false);
+		}
+
+		let cekresi_props = {};
+		if (ctx.modal.cek_resi !== void 0) {
+			cekresi_props.show = ctx.modal.cek_resi;
+		}
+		var cekresi = new CekResi({ props: cekresi_props, $$inline: true });
+
+		add_binding_callback(() => bind(cekresi, 'show', cekresi_show_binding));
+
+		return {
+			c: function create() {
+				cekresi.$$.fragment.c();
+			},
+
+			m: function mount(target, anchor) {
+				mount_component(cekresi, target, anchor);
+				current = true;
+			},
+
+			p: function update(changed, ctx) {
+				var cekresi_changes = {};
+				if (!updating_show && changed.modal) {
+					cekresi_changes.show = ctx.modal.cek_resi;
+				}
+				cekresi.$set(cekresi_changes);
+			},
+
+			i: function intro(local) {
+				if (current) return;
+				cekresi.$$.fragment.i(local);
+
+				current = true;
+			},
+
+			o: function outro(local) {
+				cekresi.$$.fragment.o(local);
+				current = false;
+			},
+
+			d: function destroy(detaching) {
+				cekresi.$destroy(detaching);
+			}
+		};
+	}
+
+	// (333:9) {#if iklan.iklan_1.length > 0}
 	function create_if_block_1$2(ctx) {
 		var div, img, img_src_value;
 
@@ -4563,9 +4857,10 @@ var home = (function () {
 				img = element("img");
 				img.src = img_src_value = ctx.iklan.iklan_1;
 				img.alt = "iklan";
-				add_location(img, file$4, 328, 12, 14171);
+				add_location(img, file$4, 334, 12, 14313);
 				div.className = "uk-width-1-1@s uk-width-1-2@m";
-				add_location(div, file$4, 327, 9, 14114);
+				set_style(div, "padding", "4px");
+				add_location(div, file$4, 333, 9, 14234);
 			},
 
 			m: function mount(target, anchor) {
@@ -4587,7 +4882,7 @@ var home = (function () {
 		};
 	}
 
-	// (332:9) {#if iklan.iklan_2.length > 0}
+	// (338:9) {#if iklan.iklan_2.length > 0}
 	function create_if_block$3(ctx) {
 		var div, img, img_src_value;
 
@@ -4597,9 +4892,10 @@ var home = (function () {
 				img = element("img");
 				img.src = img_src_value = ctx.iklan.iklan_2;
 				img.alt = "iklan";
-				add_location(img, file$4, 333, 12, 14350);
+				add_location(img, file$4, 339, 12, 14514);
 				div.className = "uk-width-1-1@s uk-width-1-2@m";
-				add_location(div, file$4, 332, 9, 14293);
+				set_style(div, "padding", "4px");
+				add_location(div, file$4, 338, 9, 14435);
 			},
 
 			m: function mount(target, anchor) {
@@ -4621,8 +4917,8 @@ var home = (function () {
 		};
 	}
 
-	function create_fragment$4(ctx) {
-		var div32, div31, img0, t0, div7, div6, div5, div1, img1, t1, h30, t2, t3_value = ctx.account_data.name, t3, t4, t5, div0, span0, b0, t7, h2, b1, t8, t9_value = ctx.account_data.str_balance, t9, t10, t11, button0, t13, div4, div3, h31, t15, div2, button1, t17, button2, t19, button3, t21, div10, div8, img2, t22, div9, img3, t23, updating_show, t24, updating_show_1, t25, updating_show_2, t26, updating_show_3, t27, div28, div27, div26, div13, div12, div11, h4, t29, button4, t31, div25, h32, t33, div24, div18, div17, div16, h33, t35, div14, img4, t36, span1, t38, div15, img5, t39, span2, t41, div23, div22, div21, h34, t43, div19, img6, t44, span3, t46, div20, img7, t47, span4, t49, t50, t51, div30, t52, t53, div29, span5, t55, span6, current, dispose;
+	function create_fragment$5(ctx) {
+		var div32, div31, img0, t0, div7, div6, div5, div1, img1, t1, h30, t2, t3_value = ctx.account_data.name, t3, t4, t5, div0, span0, b0, t7, h2, b1, t8, t9_value = ctx.account_data.str_balance, t9, t10, t11, button0, t13, div4, div3, h31, t15, div2, button1, t17, button2, t19, button3, t21, div10, div8, img2, t22, div9, img3, t23, updating_show, t24, updating_show_1, t25, updating_show_2, t26, updating_show_3, t27, div28, div27, div26, div13, div12, div11, h4, t29, button4, t31, div25, h32, t33, div24, div18, div17, div16, h33, t35, div14, img4, t36, span1, t38, div15, img5, t39, span2, t41, div23, div22, div21, h34, t43, div19, img6, t44, span3, t46, div20, img7, t47, span4, t49, t50, t51, t52, div30, t53, t54, div29, span5, t56, span6, current, dispose;
 
 		function modal0_show_binding(value) {
 			ctx.modal0_show_binding.call(null, value);
@@ -4682,7 +4978,7 @@ var home = (function () {
 		}
 
 		let modal3_props = {
-			$$slots: { default: [create_default_slot$2] },
+			$$slots: { default: [create_default_slot$3] },
 			$$scope: { ctx }
 		};
 		if (ctx.modal.profile !== void 0) {
@@ -4692,13 +4988,15 @@ var home = (function () {
 
 		add_binding_callback(() => bind(modal3, 'show', modal3_show_binding));
 
-		var if_block0 = (ctx.modal.cek_ongkir) && create_if_block_3$2(ctx);
+		var if_block0 = (ctx.modal.cek_ongkir) && create_if_block_4$2(ctx);
 
-		var if_block1 = (ctx.modal.kuis) && create_if_block_2$2(ctx);
+		var if_block1 = (ctx.modal.kuis) && create_if_block_3$2(ctx);
 
-		var if_block2 = (ctx.iklan.iklan_1.length > 0) && create_if_block_1$2(ctx);
+		var if_block2 = (ctx.modal.cek_resi) && create_if_block_2$2(ctx);
 
-		var if_block3 = (ctx.iklan.iklan_2.length > 0) && create_if_block$3(ctx);
+		var if_block3 = (ctx.iklan.iklan_1.length > 0) && create_if_block_1$2(ctx);
+
+		var if_block4 = (ctx.iklan.iklan_2.length > 0) && create_if_block$3(ctx);
 
 		return {
 			c: function create() {
@@ -4818,15 +5116,17 @@ var home = (function () {
 				t50 = space();
 				if (if_block1) if_block1.c();
 				t51 = space();
-				div30 = element("div");
 				if (if_block2) if_block2.c();
 				t52 = space();
+				div30 = element("div");
 				if (if_block3) if_block3.c();
 				t53 = space();
+				if (if_block4) if_block4.c();
+				t54 = space();
 				div29 = element("div");
 				span5 = element("span");
 				span5.textContent = "Ads by";
-				t55 = space();
+				t56 = space();
 				span6 = element("span");
 				span6.textContent = "Iklanin";
 				img0.className = "uk-align-center";
@@ -4877,105 +5177,103 @@ var home = (function () {
 				add_location(div7, file$4, 5, 6, 291);
 				img2.src = "/assets/public/img/ad_arta_1.png";
 				img2.alt = "ads";
-				add_location(img2, file$4, 47, 12, 2508);
+				add_location(img2, file$4, 47, 12, 2507);
 				div8.className = "uk-width-1-2@m uk-width-1-1@s";
-				set_style(div8, "padding", "12px");
+				set_style(div8, "padding", "4px");
 				add_location(div8, file$4, 46, 9, 2428);
 				img3.src = "/assets/public/img/ad_arta_2.png";
 				img3.alt = "ads";
-				add_location(img3, file$4, 50, 12, 2670);
+				add_location(img3, file$4, 50, 12, 2668);
 				div9.className = "uk-width-1-2@m uk-width-1-1@s";
-				set_style(div9, "padding", "12px");
-				add_location(div9, file$4, 49, 9, 2590);
+				set_style(div9, "padding", "4px");
+				add_location(div9, file$4, 49, 9, 2589);
 				attr(div10, "uk-grid", "");
 				set_style(div10, "margin-top", "24px");
 				add_location(div10, file$4, 45, 6, 2378);
 				h4.className = "uk-text-center";
-				add_location(h4, file$4, 267, 24, 11050);
+				add_location(h4, file$4, 267, 24, 11048);
 				button4.className = "uk-align-center uk-button uk-button-default ws-btn-round-2 ws-btn-green";
-				add_location(button4, file$4, 268, 24, 11136);
+				add_location(button4, file$4, 268, 24, 11134);
 				div11.className = "uk-card-body";
-				add_location(div11, file$4, 266, 21, 10998);
+				add_location(div11, file$4, 266, 21, 10996);
 				div12.className = "uk-card uk-card-default";
-				add_location(div12, file$4, 265, 18, 10938);
+				add_location(div12, file$4, 265, 18, 10936);
 				div13.className = "uk-width-1-3@m uk-width-1-1@s";
-				add_location(div13, file$4, 264, 15, 10875);
+				add_location(div13, file$4, 264, 15, 10873);
 				h32.className = "ws-title";
-				add_location(h32, file$4, 273, 18, 11431);
+				add_location(h32, file$4, 273, 18, 11429);
 				h33.className = "ws-title-small";
-				add_location(h33, file$4, 278, 30, 11754);
+				add_location(h33, file$4, 278, 30, 11752);
 				img4.src = "/assets/public/img/delivery-truck.png";
 				img4.width = "32";
 				img4.alt = "pjt logo";
-				add_location(img4, file$4, 280, 33, 11967);
+				add_location(img4, file$4, 280, 33, 11965);
 				span1.className = "ws-title";
-				add_location(span1, file$4, 281, 33, 12077);
+				add_location(span1, file$4, 281, 33, 12075);
 				div14.className = "uk-button uk-button-link";
 				set_style(div14, "padding", "0px");
-				add_location(div14, file$4, 279, 30, 11831);
+				add_location(div14, file$4, 279, 30, 11829);
 				img5.src = "/assets/public/img/delivery-truck.png";
 				img5.width = "32";
 				img5.alt = "pjt logo";
-				add_location(img5, file$4, 284, 33, 12282);
+				add_location(img5, file$4, 284, 33, 12320);
 				span2.className = "ws-title";
-				add_location(span2, file$4, 285, 33, 12392);
+				add_location(span2, file$4, 285, 33, 12430);
 				div15.className = "uk-button uk-button-link";
 				set_style(div15, "padding", "0px");
-				add_location(div15, file$4, 283, 30, 12187);
+				add_location(div15, file$4, 283, 30, 12185);
 				div16.className = "uk-card-body";
-				add_location(div16, file$4, 277, 27, 11696);
+				add_location(div16, file$4, 277, 27, 11694);
 				div17.className = "uk-card uk-card-default";
-				add_location(div17, file$4, 276, 24, 11630);
+				add_location(div17, file$4, 276, 24, 11628);
 				div18.className = "uk-width-1-2@m uk-width-1-1@s";
-				add_location(div18, file$4, 275, 21, 11561);
+				add_location(div18, file$4, 275, 21, 11559);
 				h34.className = "ws-title-small";
-				add_location(h34, file$4, 293, 30, 12780);
+				add_location(h34, file$4, 293, 30, 12818);
 				img6.src = "/assets/public/img/delivery-truck.png";
 				img6.width = "32";
 				img6.alt = "pjt logo";
-				add_location(img6, file$4, 295, 33, 12947);
+				add_location(img6, file$4, 295, 33, 12952);
 				span3.className = "ws-title";
-				add_location(span3, file$4, 296, 33, 13057);
-				div19.className = "uk-button uk-button-link";
+				add_location(span3, file$4, 296, 33, 13062);
 				set_style(div19, "padding", "0px");
-				add_location(div19, file$4, 294, 30, 12852);
+				add_location(div19, file$4, 294, 30, 12890);
 				img7.src = "/assets/public/img/delivery-truck.png";
 				img7.width = "32";
 				img7.alt = "pjt logo";
-				add_location(img7, file$4, 299, 33, 13260);
+				add_location(img7, file$4, 299, 33, 13232);
 				span4.className = "ws-title";
-				add_location(span4, file$4, 300, 33, 13370);
-				div20.className = "uk-button uk-button-link";
+				add_location(span4, file$4, 300, 33, 13342);
 				set_style(div20, "padding", "0px");
-				add_location(div20, file$4, 298, 30, 13165);
+				add_location(div20, file$4, 298, 30, 13170);
 				div21.className = "uk-card-body";
-				add_location(div21, file$4, 292, 27, 12722);
+				add_location(div21, file$4, 292, 27, 12760);
 				div22.className = "uk-card uk-card-default";
-				add_location(div22, file$4, 291, 24, 12656);
+				add_location(div22, file$4, 291, 24, 12694);
 				div23.className = "uk-width-1-2@m uk-width-1-1@s";
-				add_location(div23, file$4, 290, 21, 12587);
+				add_location(div23, file$4, 290, 21, 12625);
 				div24.className = "uk-width-1-1 uk-grid-match";
 				attr(div24, "uk-grid", "");
-				add_location(div24, file$4, 274, 18, 11490);
+				add_location(div24, file$4, 274, 18, 11488);
 				div25.className = "uk-width-2-3@m uk-width-1-1@s";
-				add_location(div25, file$4, 272, 15, 11368);
+				add_location(div25, file$4, 272, 15, 11366);
 				attr(div26, "uk-grid", "");
-				add_location(div26, file$4, 263, 12, 10845);
+				add_location(div26, file$4, 263, 12, 10843);
 				div27.className = "uk-card-body";
-				add_location(div27, file$4, 262, 9, 10805);
+				add_location(div27, file$4, 262, 9, 10803);
 				div28.className = "uk-card uk-card-default";
 				set_style(div28, "margin-top", "24px");
-				add_location(div28, file$4, 261, 6, 10731);
+				add_location(div28, file$4, 261, 6, 10729);
 				span5.className = "ws-title";
-				add_location(span5, file$4, 337, 12, 14493);
+				add_location(span5, file$4, 343, 12, 14657);
 				set_style(span6, "font-size", "12px");
-				add_location(span6, file$4, 338, 12, 14543);
+				add_location(span6, file$4, 344, 12, 14707);
 				div29.className = "uk-width-1-1 uk-flex uk-flex-right";
-				add_location(div29, file$4, 336, 9, 14431);
+				add_location(div29, file$4, 342, 9, 14595);
 				set_style(div30, "margin-bottom", "24px");
 				set_style(div30, "margin-top", "24px");
 				attr(div30, "uk-grid", "");
-				add_location(div30, file$4, 325, 6, 14002);
+				add_location(div30, file$4, 331, 6, 14122);
 				div31.className = "uk-width-2-3@m uk-width-1-1@s";
 				set_style(div31, "padding", "12px");
 				add_location(div31, file$4, 1, 3, 88);
@@ -4988,7 +5286,8 @@ var home = (function () {
 					listen(button2, "click", ctx.click_handler_2),
 					listen(button3, "click", ctx.click_handler_3),
 					listen(button4, "click", ctx.click_handler_10),
-					listen(div14, "click", ctx.click_handler_11)
+					listen(div14, "click", ctx.click_handler_11),
+					listen(div15, "click", ctx.click_handler_12)
 				];
 			},
 
@@ -5098,14 +5397,16 @@ var home = (function () {
 				append(div31, t50);
 				if (if_block1) if_block1.m(div31, null);
 				append(div31, t51);
+				if (if_block2) if_block2.m(div31, null);
+				append(div31, t52);
 				append(div31, div30);
-				if (if_block2) if_block2.m(div30, null);
-				append(div30, t52);
 				if (if_block3) if_block3.m(div30, null);
 				append(div30, t53);
+				if (if_block4) if_block4.m(div30, null);
+				append(div30, t54);
 				append(div30, div29);
 				append(div29, span5);
-				append(div29, t55);
+				append(div29, t56);
 				append(div29, span6);
 				current = true;
 			},
@@ -5152,7 +5453,7 @@ var home = (function () {
 						if_block0.p(changed, ctx);
 						if_block0.i(1);
 					} else {
-						if_block0 = create_if_block_3$2(ctx);
+						if_block0 = create_if_block_4$2(ctx);
 						if_block0.c();
 						if_block0.i(1);
 						if_block0.m(div31, t50);
@@ -5173,7 +5474,7 @@ var home = (function () {
 						if_block1.p(changed, ctx);
 						if_block1.i(1);
 					} else {
-						if_block1 = create_if_block_2$2(ctx);
+						if_block1 = create_if_block_3$2(ctx);
 						if_block1.c();
 						if_block1.i(1);
 						if_block1.m(div31, t51);
@@ -5189,30 +5490,51 @@ var home = (function () {
 					check_outros();
 				}
 
-				if (ctx.iklan.iklan_1.length > 0) {
+				if (ctx.modal.cek_resi) {
 					if (if_block2) {
 						if_block2.p(changed, ctx);
+						if_block2.i(1);
 					} else {
-						if_block2 = create_if_block_1$2(ctx);
+						if_block2 = create_if_block_2$2(ctx);
 						if_block2.c();
-						if_block2.m(div30, t52);
+						if_block2.i(1);
+						if_block2.m(div31, t52);
 					}
 				} else if (if_block2) {
-					if_block2.d(1);
-					if_block2 = null;
+					group_outros();
+					on_outro(() => {
+						if_block2.d(1);
+						if_block2 = null;
+					});
+
+					if_block2.o(1);
+					check_outros();
 				}
 
-				if (ctx.iklan.iklan_2.length > 0) {
+				if (ctx.iklan.iklan_1.length > 0) {
 					if (if_block3) {
 						if_block3.p(changed, ctx);
 					} else {
-						if_block3 = create_if_block$3(ctx);
+						if_block3 = create_if_block_1$2(ctx);
 						if_block3.c();
 						if_block3.m(div30, t53);
 					}
 				} else if (if_block3) {
 					if_block3.d(1);
 					if_block3 = null;
+				}
+
+				if (ctx.iklan.iklan_2.length > 0) {
+					if (if_block4) {
+						if_block4.p(changed, ctx);
+					} else {
+						if_block4 = create_if_block$3(ctx);
+						if_block4.c();
+						if_block4.m(div30, t54);
+					}
+				} else if (if_block4) {
+					if_block4.d(1);
+					if_block4 = null;
 				}
 			},
 
@@ -5228,6 +5550,7 @@ var home = (function () {
 
 				if (if_block0) if_block0.i();
 				if (if_block1) if_block1.i();
+				if (if_block2) if_block2.i();
 				current = true;
 			},
 
@@ -5238,6 +5561,7 @@ var home = (function () {
 				modal3.$$.fragment.o(local);
 				if (if_block0) if_block0.o();
 				if (if_block1) if_block1.o();
+				if (if_block2) if_block2.o();
 				current = false;
 			},
 
@@ -5258,6 +5582,7 @@ var home = (function () {
 				if (if_block1) if_block1.d();
 				if (if_block2) if_block2.d();
 				if (if_block3) if_block3.d();
+				if (if_block4) if_block4.d();
 				run_all(dispose);
 			}
 		};
@@ -5269,7 +5594,7 @@ var home = (function () {
 	   })
 	}
 
-	function instance$3($$self, $$props, $$invalidate) {
+	function instance$4($$self, $$props, $$invalidate) {
 		
 	   
 	   var query_param = new URLSearchParams(window.location.search);
@@ -5282,7 +5607,8 @@ var home = (function () {
 	      publish_payment: false,
 	      profile: false,
 	      cek_ongkir: false,
-	      kuis: false
+	      kuis: false,
+	      cek_resi: false
 	   };
 
 	   const account_data = {
@@ -5684,6 +6010,12 @@ var home = (function () {
 			return $$result;
 		}
 
+		function click_handler_12() {
+			const $$result = modal.cek_resi = true;
+			$$invalidate('modal', modal);
+			return $$result;
+		}
+
 		function cekongkir_show_binding(value) {
 			modal.cek_ongkir = value;
 			$$invalidate('modal', modal);
@@ -5691,6 +6023,11 @@ var home = (function () {
 
 		function modalkuis_show_binding(value) {
 			modal.kuis = value;
+			$$invalidate('modal', modal);
+		}
+
+		function cekresi_show_binding(value) {
+			modal.cek_resi = value;
 			$$invalidate('modal', modal);
 		}
 
@@ -5750,15 +6087,17 @@ var home = (function () {
 			modal3_show_binding,
 			click_handler_10,
 			click_handler_11,
+			click_handler_12,
 			cekongkir_show_binding,
-			modalkuis_show_binding
+			modalkuis_show_binding,
+			cekresi_show_binding
 		};
 	}
 
 	class Home extends SvelteComponentDev {
 		constructor(options) {
 			super(options);
-			init(this, options, instance$3, create_fragment$4, safe_not_equal, []);
+			init(this, options, instance$4, create_fragment$5, safe_not_equal, []);
 		}
 	}
 
