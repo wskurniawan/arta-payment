@@ -194,6 +194,14 @@
             </div>
          </div>
          {/if}
+
+         <div style="margin-top: 24px">
+            <img src={iklan.iklan_payment} alt="ads">
+            <div class="uk-width-1-1 uk-flex uk-flex-right">
+               <span class="ws-title">Ads by</span>
+               <span style="font-size: 12px">Iklanin</span>
+            </div>
+         </div>
       </Modal>
       <!-- end -->
 
@@ -489,6 +497,12 @@
          console.log(error);
       });
 
+      get_ads().then(result => {
+         iklan.iklan_payment = result.data.url
+      }).catch(error => {
+         console.log(error);
+      });
+
       setInterval(() => {
          //get iklan
          get_ads().then(result => {
@@ -499,6 +513,12 @@
 
          get_ads().then(result => {
             iklan.iklan_2 = result.data.url
+         }).catch(error => {
+            console.log(error);
+         });
+
+         get_ads().then(result => {
+            iklan.iklan_payment = result.data.url
          }).catch(error => {
             console.log(error);
          });
