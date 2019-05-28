@@ -76,6 +76,7 @@ app.use('/account', require('./routes/account_routes').default);
 app.use('/payment', require('./routes/payment_routes').default);
 app.use('/service/pjt', require('./routes/cek_ongkir_routes').default);
 app.use('/service/ads', require('./routes/ads_routes').default);
+app.use('/service/kuis', require('./routes/kuis_routes').default);
 
 app.use(function(err: Error, req: Request, res: Response, next: NextFunction){
    console.log(err);

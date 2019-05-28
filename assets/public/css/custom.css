@@ -64,3 +64,16 @@ body, h1, h2, h3, h4, h5, span, b, i{
  *+.uk-grid-margin, .uk-grid+.uk-grid, .uk-grid>.uk-grid-margin {
    margin-top: 15px;
 }
+
+.ws-btn-round-2{
+   border-radius: 15px 50px 30px;
+}
+
+.ws-btn-green{
+   background: #4CAF50;
+   color: white;
+}
+
+.uk-first-column{
+   padding-left: 0px;
+}

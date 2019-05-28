@@ -44,10 +44,10 @@
 
       <!-- adds -->
       <div uk-grid style="margin-top: 24px;">
-         <div class="uk-width-1-2@m uk-width-1-1@s">
+         <div class="uk-width-1-2@m uk-width-1-1@s" style="padding: 12px;">
             <img src="/assets/public/img/ad_arta_1.png" alt="ads">
          </div>
-         <div class="uk-width-1-2@m uk-width-1-1@s">
+         <div class="uk-width-1-2@m uk-width-1-1@s" style="padding: 12px;">
             <img src="/assets/public/img/ad_arta_2.png" alt="ads">
          </div>
       </div>
@@ -263,11 +263,16 @@
          <div class="uk-card-body">
             <div uk-grid>
                <div class="uk-width-1-3@m uk-width-1-1@s">
-
+                  <div class="uk-card uk-card-default">
+                     <div class="uk-card-body">
+                        <h4 class="uk-text-center">Uji pengetahuan Nusantaramu!</h4>
+                        <button class="uk-align-center uk-button uk-button-default ws-btn-round-2 ws-btn-green" on:click={() => modal.kuis = true}>Mulai</button>
+                     </div>
+                  </div>
                </div>
                <div class="uk-width-2-3@m uk-width-1-1@s">
                   <h3 class="ws-title">ARTA PLATFORM</h3>
-                  <div class="uk-width-1-1" uk-grid>
+                  <div class="uk-width-1-1 uk-grid-match" uk-grid>
                      <div class="uk-width-1-2@m uk-width-1-1@s">
                         <div class="uk-card uk-card-default">
                            <div class="uk-card-body">
@@ -311,6 +316,12 @@
       {/if}
       <!-- end -->
 
+      <!-- modal kuis -->
+      {#if modal.kuis}
+      <ModalKuis bind:show={modal.kuis}></ModalKuis>
+      {/if}
+      <!-- end -->
+
       <!-- iklanin ads -->
       <div style="margin-bottom: 24px; margin-top: 24px;" uk-grid>
          {#if iklan.iklan_1.length > 0}
@@ -337,6 +348,7 @@
    import { onMount } from 'svelte';
    import Loading from './../components/loading.svelte';
    import CekOngkir from './../components/CekOngkir.svelte';
+   import ModalKuis from './../components/ModalKuis.svelte';
    
    var query_param = new URLSearchParams(window.location.search);
    var session = query_param.get('session');
@@ -347,7 +359,8 @@
       do_payment: false,
       publish_payment: false,
       profile: false,
-      cek_ongkir: false
+      cek_ongkir: false,
+      kuis: false
    }
 
    const account_data = {
@@ -467,6 +480,21 @@
       }).catch(error => {
          console.log(error);
       });
+
+      setInterval(() => {
+         //get iklan
+         get_ads().then(result => {
+            iklan.iklan_1 = result.data.url
+         }).catch(error => {
+            console.log(error);
+         });
+
+         get_ads().then(result => {
+            iklan.iklan_2 = result.data.url
+         }).catch(error => {
+            console.log(error);
+         });
+      }, 15000);
    });
 
    function do_topup(amount){

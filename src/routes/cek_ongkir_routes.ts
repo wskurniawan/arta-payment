@@ -35,7 +35,7 @@ Router.get('/kota', async function(req, res, next){
    const id_provinsi = <string> req.query.id_provinsi;
 
    try {
-      var response = await axios.get(`${base_url}/city?idProvinsi=${id_provinsi}`);
+      var response = await axios.get(`${base_url}/kota?idProvinsi=${id_provinsi}`);
    } catch (error) {
       return response_helper.internal_server_error(res, <string> error.message);
    }
@@ -61,7 +61,7 @@ Router.post('/biaya', async function(req, res, next){
    const request_data = <get_ongkir_post_type> req.body;
 
    try {
-      var response = await axios.post(`${base_url}/cost`, { asal: request_data.id_kota_asal, tujuan: request_data.id_kota_tujuan, berat: request_data.berat });
+      var response = await axios.post(`${base_url}/harga`, { asal: request_data.id_kota_asal, tujuan: request_data.id_kota_tujuan, berat: request_data.berat });
    } catch (error) {
       return response_helper.internal_server_error(res, <string> error.message);
    }
