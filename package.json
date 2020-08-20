@@ -22,7 +22,7 @@
   "dependencies": {
     "@types/joi": "^14.3.3",
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "ejs": "^2.6.1",
